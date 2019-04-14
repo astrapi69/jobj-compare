@@ -11,7 +11,7 @@
 
 </div>
 
-Utility library for collections, comparators and iterator classes
+Utility library for simply compare java objects
 
 ## License
 
@@ -28,14 +28,14 @@ Than you can add the dependency to your dependencies:
 
 	<properties>
 			...
-		<!-- jobj-compare version -->
-		<jobj-compare.version>5.1</jobj-compare.version>
+		<!-- JOBJ-COMPARE version -->
+		<jobj-compare.version>3</jobj-compare.version>
 			...
 	</properties>
 			...
 		<dependencies>
 			...
-			<!-- jobj-compare DEPENDENCY -->
+			<!-- JOBJ-COMPARE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobj-compare</artifactId>
