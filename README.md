@@ -13,6 +13,30 @@
 
 Utility library for simply compare java objects
 
+# Donations
+
+If you like this library, please consider a donation through paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" border="0" />
+</a>
+
+or over bitcoin or bitcoin-cash with:
+
+36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
+
+or over ether with:
+
+0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
+
+or over flattr:
+  
+<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+</a>
+
+## Note
+
+No animals were harmed in the making of this library.
+
 ## License
 
 The source code comes under the liberal MIT License, making jobj-compare great for all types of applications.
@@ -68,36 +92,6 @@ Don't forget to add new units tests on your changes.
 
 Do not hesitate to contact the jobj-compare developers with your questions, concerns, comments, bug reports, or feature requests.
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/jobj-compare/issues).
-
-## Note
-
-No animals were harmed in the making of this library.
-
-
-# Donations
-
-If you like this library, please consider a donation through bitcoin or over bitcoin-cash with:
-
-36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
-
-or over ether with:
-
-0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
-
-or over flattr:
-
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Fastrapi69%2Fjobj-compare" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
-</a>
-
-## Similar projects
-
-Here is a list of awesome similar projects:
-
-Open Source:
-
- * [streamex](https://github.com/amaembo/streamex) Enhancing Java 8 Streams
- * [glazedlists](https://github.com/glazedlists/glazedlists) Open Source List Transformations for Java
 
 ## Credits
 
