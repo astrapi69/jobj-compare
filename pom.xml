@@ -12,7 +12,7 @@
 
 	<artifactId>jobj-compare</artifactId>
 
-	<version>3</version>
+	<version>3.1</version>
 
 	<properties>
 		<!-- TEST-OBJECTS version -->

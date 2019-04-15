@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 3.1
+-------------
+
+ADDED:
+ 
+- new enum CompareOrder created that encapsulates the possible return values of the compare method
+
 Version 3
 -------------
 
