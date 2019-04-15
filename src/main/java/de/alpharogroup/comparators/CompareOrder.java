@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The enum {@link CompareOrder} holds encapsulates the possible return values of the method
+ * The enum {@link CompareOrder} that encapsulates the possible return values of the method
  * {@link Comparator#compare(Object, Object)}
  */
 @RequiredArgsConstructor
