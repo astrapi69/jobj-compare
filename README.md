@@ -2,8 +2,8 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/astrapi69/jobj-compare.svg?branch=develop)](https://travis-ci.org/astrapi69/jobj-compare) 
-[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-compare?branch=develop) 
+[![Build Status](https://travis-ci.org/astrapi69/jobj-compare.svg?branch=master)](https://travis-ci.org/astrapi69/jobj-compare) 
+[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master) 
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-compare.svg?style=flat)](https://github.com/astrapi69/jobj-compare/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-compare.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-compare)
@@ -111,7 +111,7 @@ Do not hesitate to contact the jobj-compare developers with your questions, conc
 
 |**coveralls.io**|
 |     :---:      |
-|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master)|
+|[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master)|
 |Special thanks to [coveralls.io](https://coveralls.io) for providing a free code coverage for open source projects|
 |     <img width=1000/>     |
 
