@@ -7,13 +7,13 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.8</version>
+		<version>5.3</version>
 	</parent>
 
 	<artifactId>jobj-compare</artifactId>
 
 	<version>3.2-SNAPSHOT</version>
-	
+
 	<name>${project.artifactId}</name>
 
 	<description>Simply compare java objects</description>
@@ -22,9 +22,10 @@
 
 	<properties>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5.0.1</test-objects.version>
+		<test-objects.version>5.2</test-objects.version>
 		<!-- EXTERNAL LIBRARIES versions -->
-		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<commons-beanutils.version>1.9.4</commons-beanutils.version>
+		<guava.version>28.1-jre</guava.version>
 	</properties>
 
 	<licenses>
@@ -73,6 +74,12 @@
 				<artifactId>test-objects</artifactId>
 				<version>${test-objects.version}</version>
 			</dependency>
+			<!-- GUAVA DEPENDENCY -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
 
 		</dependencies>
 
@@ -97,7 +104,13 @@
 			<artifactId>meanbean</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- GUAVA DEPENDENCY -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
-	
+
 </project>
