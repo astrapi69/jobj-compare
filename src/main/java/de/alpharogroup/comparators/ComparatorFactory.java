@@ -20,48 +20,30 @@
  */
 package de.alpharogroup.comparators;
 
-import static org.testng.Assert.assertEquals;
+import java.util.Comparator;
+import java.util.List;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.meanbean.test.BeanTestException;
-import org.meanbean.test.BeanTester;
-import org.testng.annotations.Test;
+import lombok.NonNull;
 
 /**
- * The unit test class for the enum class {@link CompareOrder}.
+ * A factory for creating custom {@link Comparator} objects
  */
-public class CompareOrderTest
+public class ComparatorFactory
 {
 
 	/**
-	 * Test method for {@link CompareOrder#getOrder()}
+	 * Factory method for create a new {@link Comparator} from the given {@link List} with the
+	 * defined order
+	 *
+	 * @param <T>
+	 *            the generic type of the elements
+	 * @param definedOrder
+	 *            the defined order
+	 * @return the comparator
 	 */
-	@Test
-	public void testGetOrder()
+	public static <T> Comparator<T> newComparator(final @NonNull List<T> definedOrder)
 	{
-		int expected;
-		int actual;
-		actual = CompareOrder.AFTER.getOrder();
-		expected = 1;
-		assertEquals(actual, expected);
-		actual = CompareOrder.BEFORE.getOrder();
-		expected = -1;
-		assertEquals(actual, expected);
-		actual = CompareOrder.EQUAL.getOrder();
-		expected = 0;
-		assertEquals(actual, expected);
-	}
-
-	/**
-	 * Test method for {@link CompareOrder}
-	 */
-	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
-			UnsupportedOperationException.class })
-	public void testWithBeanTester()
-	{
-		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(CompareOrder.class);
+		return Comparator.comparing(e -> definedOrder.indexOf(e));
 	}
 
 }

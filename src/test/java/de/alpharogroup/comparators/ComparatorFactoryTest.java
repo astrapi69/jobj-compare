@@ -22,46 +22,42 @@ package de.alpharogroup.comparators;
 
 import static org.testng.Assert.assertEquals;
 
-import java.lang.reflect.InvocationTargetException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
-import org.meanbean.test.BeanTestException;
-import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import com.google.common.collect.Lists;
+
 /**
- * The unit test class for the enum class {@link CompareOrder}.
+ * The unit test class for the class {@link ComparatorFactory}
  */
-public class CompareOrderTest
+public class ComparatorFactoryTest
 {
 
 	/**
-	 * Test method for {@link CompareOrder#getOrder()}
+	 * Test for method {@link ComparatorFactory#newComparator(List)}
 	 */
 	@Test
-	public void testGetOrder()
+	public void testNewComparator()
 	{
-		int expected;
-		int actual;
-		actual = CompareOrder.AFTER.getOrder();
-		expected = 1;
+		List<Integer> values;
+		List<Integer> actual;
+		List<Integer> expected;
+		// new scenario...
+		values = Lists.newArrayList(1, 2, 3, 4, 5);
+		// change list to random sort order
+		Collections.shuffle(values);
+		// create the custom Comparator from the given list
+		Comparator<Integer> customComparator = ComparatorFactory.newComparator(values);
+		// create a new list to sort with the custom Comparator
+		actual = Lists.newArrayList(1, 2, 3, 4, 5);
+		// sort with the custom Comparator
+		Collections.sort(actual, customComparator);
+		// now the actual list have to be sorted as the values list
+		expected = values;
 		assertEquals(actual, expected);
-		actual = CompareOrder.BEFORE.getOrder();
-		expected = -1;
-		assertEquals(actual, expected);
-		actual = CompareOrder.EQUAL.getOrder();
-		expected = 0;
-		assertEquals(actual, expected);
-	}
-
-	/**
-	 * Test method for {@link CompareOrder}
-	 */
-	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
-			UnsupportedOperationException.class })
-	public void testWithBeanTester()
-	{
-		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(CompareOrder.class);
 	}
 
 }

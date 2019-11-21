@@ -1,6 +1,20 @@
 ## Change log
 ----------------------
 
+Version 3.2
+-------------
+
+ADDED:
+ 
+- new factory class created for create custom Comparators
+- added new test dependency guava in version 28.1-jre
+
+CHANGED:
+
+- update of parent version to 5.3
+- update of dependency commons-beanutils version to 1.9.4
+- update of test dependency test-objects version to 5.2
+
 Version 3.1
 -------------
 
