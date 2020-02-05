@@ -4,6 +4,15 @@
 Version 3.3-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- gradle as build system
+
+CHANGED:
+
+- removed maven related files
+- changed project nature from maven to gradle nature
+
 Version 3.2
 -------------
 
