@@ -23,8 +23,6 @@ package de.alpharogroup.comparators;
 import java.io.Serializable;
 import java.util.Comparator;
 
-import lombok.Builder;
-
 /**
  * The class {@link NullCheckComparator} decorates another {@link Comparator} object to compare null
  * and non-null values. Before the decorated {@link Comparator} will be executed null check will be
@@ -34,12 +32,54 @@ import lombok.Builder;
  * @param <T>
  *            the generic type of the {@link Comparator} object that will be decorated
  */
-@Builder
 public class NullCheckComparator<T> implements Comparator<T>, Serializable
 {
+	public static class NullCheckComparatorBuilder<T>
+	{
 
-	/** The Constant serialVersionUID. */
+		private Comparator<T> decoratedComparator;
+
+		private boolean nullIsGreaterThan;
+
+		NullCheckComparatorBuilder()
+		{
+		}
+
+		public NullCheckComparator<T> build()
+		{
+			return new NullCheckComparator<T>(decoratedComparator, nullIsGreaterThan);
+		}
+
+		public NullCheckComparatorBuilder<T> decoratedComparator(
+			final Comparator<T> decoratedComparator)
+		{
+			this.decoratedComparator = decoratedComparator;
+			return this;
+		}
+
+		public NullCheckComparatorBuilder<T> nullIsGreaterThan(final boolean nullIsGreaterThan)
+		{
+			this.nullIsGreaterThan = nullIsGreaterThan;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "NullCheckComparator.NullCheckComparatorBuilder(decoratedComparator="
+				+ this.decoratedComparator + ", nullIsGreaterThan=" + this.nullIsGreaterThan + ")";
+		}
+	}
+
+	/**
+	 * The Constant serialVersionUID.
+	 */
 	private static final long serialVersionUID = 1L;
+
+	public static <T> NullCheckComparatorBuilder<T> builder()
+	{
+		return new NullCheckComparatorBuilder<T>();
+	}
 
 	/**
 	 * Factory method to create a new {@link NullCheckComparator} object from the given
@@ -55,7 +95,6 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 	{
 		return NullCheckComparator.<T> builder().decoratedComparator(decoratedComparator).build();
 	}
-
 	/**
 	 * Factory method to create a new {@link NullCheckComparator} object from the given
 	 * {@link Comparator} object.
@@ -75,10 +114,14 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 			.nullIsGreaterThan(nullIsGreaterThan).build();
 	}
 
-	/** The decorated comparator. */
+	/**
+	 * The decorated comparator.
+	 */
 	private final Comparator<T> decoratedComparator;
 
-	/** The flag that specifies if null objects is greater than non null objects. */
+	/**
+	 * The flag that specifies if null objects is greater than non null objects.
+	 */
 	private final boolean nullIsGreaterThan;
 
 	/**
@@ -127,5 +170,4 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 		}
 		return this.decoratedComparator.compare(object, compareWithObject);
 	}
-
 }

@@ -22,8 +22,7 @@ package de.alpharogroup.comparators;
 
 import java.util.Comparator;
 import java.util.List;
-
-import lombok.NonNull;
+import java.util.Objects;
 
 /**
  * A factory for creating custom {@link Comparator} objects
@@ -41,8 +40,9 @@ public class ComparatorFactory
 	 *            the defined order
 	 * @return the comparator
 	 */
-	public static <T> Comparator<T> newComparator(final @NonNull List<T> definedOrder)
+	public static <T> Comparator<T> newComparator(final List<T> definedOrder)
 	{
+		Objects.requireNonNull(definedOrder);
 		return Comparator.comparing(e -> definedOrder.indexOf(e));
 	}
 

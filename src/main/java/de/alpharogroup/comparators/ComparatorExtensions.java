@@ -20,15 +20,11 @@
  */
 package de.alpharogroup.comparators;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * The class {@link ComparatorExtensions} have helper methods for comparators.
  */
-@UtilityClass
 public final class ComparatorExtensions
 {
-
 	/**
 	 * Compares the given objects and returns the int value.
 	 *
@@ -171,6 +167,10 @@ public final class ComparatorExtensions
 			return 1;// compareWithObject is null so its bigger
 		}
 		return null;
+	}
+
+	private ComparatorExtensions()
+	{
 	}
 
 }

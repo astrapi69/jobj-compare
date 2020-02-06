@@ -12,6 +12,8 @@ CHANGED:
 
 - removed maven related files
 - changed project nature from maven to gradle nature
+- removed lombok dependency
+- removed all lombok dependent imports 
 
 Version 3.2
 -------------

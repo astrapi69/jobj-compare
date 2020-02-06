@@ -30,22 +30,22 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.beanutils.BeanComparator;
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.test.objects.Person;
 import de.alpharogroup.test.objects.enums.Gender;
-import lombok.extern.java.Log;
 
 /**
  * The unit test class for the class {@link CompareObjectExtensions}.
  */
-@Log
 public class CompareObjectExtensionsTest
 {
+
+	private final static Logger log = Logger.getLogger(CompareObjectExtensionsTest.class.getName());
 
 	/**
 	 * Test method for {@link CompareObjectExtensions#compare(Object, Object)}.
@@ -473,8 +473,7 @@ public class CompareObjectExtensionsTest
 	/**
 	 * Test method for {@link CompareObjectExtensions} with {@link BeanTester}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
-			UnsupportedOperationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		BeanTester beanTester = new BeanTester();
