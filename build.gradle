@@ -10,7 +10,7 @@ plugins {
 apply plugin: "jacoco"
 
 group = "de.alpharogroup"
-version = "3.3-SNAPSHOT"
+version = "$projectVersion"
 description = "jobj-compare"
 sourceCompatibility = "1.8"
 

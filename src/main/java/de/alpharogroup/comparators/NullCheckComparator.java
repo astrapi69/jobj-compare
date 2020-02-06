@@ -95,6 +95,7 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 	{
 		return NullCheckComparator.<T> builder().decoratedComparator(decoratedComparator).build();
 	}
+
 	/**
 	 * Factory method to create a new {@link NullCheckComparator} object from the given
 	 * {@link Comparator} object.
