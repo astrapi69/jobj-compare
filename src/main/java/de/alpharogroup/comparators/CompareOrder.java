@@ -22,16 +22,10 @@ package de.alpharogroup.comparators;
 
 import java.util.Comparator;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
-
 /**
  * The enum {@link CompareOrder} that encapsulates the possible return values of the method
  * {@link Comparator#compare(Object, Object)}
  */
-@RequiredArgsConstructor
-@FieldDefaults(makeFinal = true)
 public enum CompareOrder
 {
 	/** The order to sort an object after. */
@@ -42,6 +36,15 @@ public enum CompareOrder
 	EQUAL(0);
 
 	/** The order. */
-	@Getter
-	int order;
+	private final int order;
+
+	CompareOrder(final int order)
+	{
+		this.order = order;
+	}
+
+	public int getOrder()
+	{
+		return order;
+	}
 }

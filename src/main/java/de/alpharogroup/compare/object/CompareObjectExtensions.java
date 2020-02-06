@@ -28,16 +28,13 @@ import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
 
 import de.alpharogroup.comparators.ComparatorExtensions;
-import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link CompareObjectExtensions} provide methods for compare an object with another
  * given object.
  */
-@UtilityClass
 public final class CompareObjectExtensions
 {
-
 	/**
 	 * Compares the given two objects.
 	 *
@@ -197,6 +194,10 @@ public final class CompareObjectExtensions
 				Integer.valueOf(compareTo(sourceOjbect, objectToCompare, key.toString())));
 		}
 		return compareResult;
+	}
+
+	private CompareObjectExtensions()
+	{
 	}
 
 }

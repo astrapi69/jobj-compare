@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.2</jobj-compare.version>
+		<jobj-compare.version>3.3</jobj-compare.version>
 			...
 	</properties>
 			...
@@ -69,6 +69,24 @@ Than you can add the dependency to your dependencies:
 			</dependency>
 			...
 		</dependencies>
+
+			
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to your project `build.gradle` if you want to import the core functionality of jobj-compare:
+
+```
+ext {
+			...
+    jobjCompareVersion = "3.3"
+			...
+}
+dependencies {
+			...
+implementation("de.alpharogroup:jobj-compare:${jobjCompareVersion}")
+			...
+}
+```
 
 ## Semantic Versioning
 
