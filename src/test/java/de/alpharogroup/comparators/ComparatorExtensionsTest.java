@@ -104,13 +104,15 @@ public class ComparatorExtensionsTest
 	public void testNullCheck()
 	{
 		Integer actual;
+		Person person;
+		Person otherPerson;
 
-		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null);
-		assertTrue(actual == 1);
-		Person person = Person.builder().build();
+		person = Person.builder().build();
 		actual = ComparatorExtensions.nullCheck(person, null);
 		assertTrue(actual == 1);
-		final Person otherPerson = Person.builder().name("s").build();
+		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null);
+		assertTrue(actual == 1);
+		otherPerson = Person.builder().name("s").build();
 		actual = ComparatorExtensions.nullCheck(person, otherPerson);
 		assertTrue(actual == null);
 		person = null;
@@ -127,13 +129,15 @@ public class ComparatorExtensionsTest
 	public void testNullCheckWithNullFlag()
 	{
 		Integer actual;
+		Person person;
+		Person otherPerson;
 		// false case...
-		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null, false);
-		assertTrue(actual == 1);
-		Person person = Person.builder().build();
+		person = Person.builder().build();
 		actual = ComparatorExtensions.nullCheck(person, null, false);
 		assertTrue(actual == 1);
-		final Person otherPerson = Person.builder().name("s").build();
+		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null, false);
+		assertTrue(actual == 1);
+		otherPerson = Person.builder().name("s").build();
 		actual = ComparatorExtensions.nullCheck(person, otherPerson, false);
 		assertTrue(actual == null);
 		person = null;

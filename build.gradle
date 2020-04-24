@@ -22,6 +22,7 @@ repositories {
 
 dependencies {
     compile("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
+    testCompile("org.apache.commons:commons-lang3:$commonsLang3Version")
     testCompile("com.google.guava:guava:$guavaVersion")
     testCompile("de.alpharogroup:test-objects:$testObjectsVersion")
     testCompile("org.meanbean:meanbean:$meanbeanVersion")
