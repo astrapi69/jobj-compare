@@ -4,6 +4,17 @@
 Version 3.4-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new test dependency commons-lang3  
+- new unit tests created
+- null check to compareTo method added
+- created new idea run configuration for code coverage
+
+CHANGED:
+
+- code coverage increased to 100%
+
 Version 3.3
 -------------
 
