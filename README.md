@@ -55,7 +55,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.3</jobj-compare.version>
+		<jobj-compare.version>3.4</jobj-compare.version>
 			...
 	</properties>
 			...
@@ -78,7 +78,7 @@ You can first define the version in the ext section and add than the following g
 ```
 ext {
 			...
-    jobjCompareVersion = "3.3"
+    jobjCompareVersion = "3.4"
 			...
 }
 dependencies {
