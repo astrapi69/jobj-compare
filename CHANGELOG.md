@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 3.4-SNAPSHOT
+Version 3.4
 -------------
 
 ADDED:
@@ -13,6 +13,11 @@ ADDED:
 
 CHANGED:
 
+- upgrade gradle version to 6.3
+- update of gradle plugin com.github.ben-manes.versions version to 0.28.0
+- update of test dependency guava version to 29.0-jre
+- update of test dependency test-objects version to 5.3
+- update of test dependency testng version to 7.2.0
 - code coverage increased to 100%
 
 Version 3.3
