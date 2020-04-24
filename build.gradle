@@ -21,12 +21,12 @@ repositories {
 }
 
 dependencies {
-    compile("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
-    testCompile("org.apache.commons:commons-lang3:$commonsLang3Version")
-    testCompile("com.google.guava:guava:$guavaVersion")
-    testCompile("de.alpharogroup:test-objects:$testObjectsVersion")
-    testCompile("org.meanbean:meanbean:$meanbeanVersion")
-    testCompile("org.testng:testng:$testngVersion")
+    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
+    testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+    testImplementation("com.google.guava:guava:$guavaVersion")
+    testImplementation("de.alpharogroup:test-objects:$testObjectsVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("org.testng:testng:$testngVersion")
 }
 
 license {
