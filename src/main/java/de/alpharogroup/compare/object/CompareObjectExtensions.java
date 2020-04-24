@@ -92,14 +92,22 @@ public final class CompareObjectExtensions
 	 *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
 	 *             "&lt;clinit&gt;".
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static int compareTo(final Object sourceOjbect, final Object objectToCompare)
 		throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
 	{
-		if (sourceOjbect == null || objectToCompare == null
-			|| !sourceOjbect.getClass().equals(objectToCompare.getClass()))
+		final Integer nullCheck = ComparatorExtensions.nullCheck(sourceOjbect, objectToCompare);
+		if (nullCheck != null)
 		{
-			throw new IllegalArgumentException("Object should not be null and be the same type.");
+			return nullCheck;
+		}
+		if (!sourceOjbect.getClass().equals(objectToCompare.getClass()))
+		{
+			throw new IllegalArgumentException("Object should be the same type.");
+		}
+		if (sourceOjbect instanceof Comparable && objectToCompare instanceof Comparable)
+		{
+			return ((Comparable)sourceOjbect).compareTo(objectToCompare);
 		}
 		final Map beanDescription = BeanUtils.describe(sourceOjbect);
 		beanDescription.remove("class");
@@ -117,7 +125,6 @@ public final class CompareObjectExtensions
 			{
 				break;
 			}
-
 		}
 		return result;
 	}

@@ -83,7 +83,7 @@ ext {
 }
 dependencies {
 			...
-implementation("de.alpharogroup:jobj-compare:${jobjCompareVersion}")
+implementation("de.alpharogroup:jobj-compare:$jobjCompareVersion")
 			...
 }
 ```

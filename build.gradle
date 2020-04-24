@@ -3,7 +3,7 @@ plugins {
     id "java"
     id "maven-publish"
     id "signing"
-    id "com.github.ben-manes.versions" version "0.27.0"
+    id "com.github.ben-manes.versions" version "0.28.0"
     id "com.github.hierynomus.license" version "0.15.0"
 }
 
@@ -21,11 +21,12 @@ repositories {
 }
 
 dependencies {
-    compile("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
-    testCompile("com.google.guava:guava:$guavaVersion")
-    testCompile("de.alpharogroup:test-objects:$testObjectsVersion")
-    testCompile("org.meanbean:meanbean:$meanbeanVersion")
-    testCompile("org.testng:testng:$testngVersion")
+    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
+    testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+    testImplementation("com.google.guava:guava:$guavaVersion")
+    testImplementation("de.alpharogroup:test-objects:$testObjectsVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("org.testng:testng:$testngVersion")
 }
 
 license {
