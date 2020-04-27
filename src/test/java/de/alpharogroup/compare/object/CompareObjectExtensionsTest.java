@@ -320,6 +320,56 @@ public class CompareObjectExtensionsTest
 	}
 
 	/**
+	 * Test method for {@link CompareObjectExtensions#compare(Object, Object, String...)}
+	 *
+	 * @throws IllegalAccessException
+	 *             Thrown if this {@code Method} object is enforcing Java language access control
+	 *             and the underlying method is inaccessible.
+	 * @throws InvocationTargetException
+	 *             Thrown if the property accessor method throws an exception
+	 * @throws NoSuchMethodException
+	 *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
+	 *             "&lt;clinit&gt;".
+	 *
+	 */
+	@Test(enabled = true)
+	public void testCompareToVarargsProperties()
+			throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
+	{
+		int expected;
+		int actual;
+		Permission sourceOjbect;
+		Permission objectToCompare;
+		// create a person...
+		sourceOjbect = Permission.builder().name("read").description("Permission for read files")
+				.build();
+		// make a clone of it...
+		objectToCompare = Permission.builder().name("read").description("Permission for read files")
+				.shortcut("R").build();
+		// compare only name and description
+		expected = 0;
+		actual = CompareObjectExtensions.compare(sourceOjbect, objectToCompare,
+				"name", "description");
+		assertEquals(expected, actual);
+		// compare all
+		expected = -1;
+		actual = CompareObjectExtensions.compare(sourceOjbect, objectToCompare,
+				"name", "description", "shortcut");
+		assertEquals(expected, actual);
+		// alter name and compare only name and description
+		sourceOjbect.setName("write");
+		expected = 5;
+		actual = CompareObjectExtensions.compare(sourceOjbect, objectToCompare,
+				"name", "description");
+		assertEquals(expected, actual);
+		// compare only description
+		expected = 0;
+		actual = CompareObjectExtensions.compare(sourceOjbect, objectToCompare,
+				"description");
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link CompareObjectExtensions#compareTo(Object, Object, Set)}
 	 *
 	 * @throws IllegalAccessException
