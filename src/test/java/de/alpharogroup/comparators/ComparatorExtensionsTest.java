@@ -24,9 +24,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 import static org.testng.AssertJUnit.assertTrue;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
@@ -107,13 +104,15 @@ public class ComparatorExtensionsTest
 	public void testNullCheck()
 	{
 		Integer actual;
+		Person person;
+		Person otherPerson;
 
-		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null);
-		assertTrue(actual == 1);
-		Person person = Person.builder().build();
+		person = Person.builder().build();
 		actual = ComparatorExtensions.nullCheck(person, null);
 		assertTrue(actual == 1);
-		final Person otherPerson = Person.builder().name("s").build();
+		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null);
+		assertTrue(actual == 1);
+		otherPerson = Person.builder().name("s").build();
 		actual = ComparatorExtensions.nullCheck(person, otherPerson);
 		assertTrue(actual == null);
 		person = null;
@@ -130,13 +129,15 @@ public class ComparatorExtensionsTest
 	public void testNullCheckWithNullFlag()
 	{
 		Integer actual;
+		Person person;
+		Person otherPerson;
 		// false case...
-		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null, false);
-		assertTrue(actual == 1);
-		Person person = Person.builder().build();
+		person = Person.builder().build();
 		actual = ComparatorExtensions.nullCheck(person, null, false);
 		assertTrue(actual == 1);
-		final Person otherPerson = Person.builder().name("s").build();
+		actual = ComparatorExtensions.nullCheck(Person.builder().build(), null, false);
+		assertTrue(actual == 1);
+		otherPerson = Person.builder().name("s").build();
 		actual = ComparatorExtensions.nullCheck(person, otherPerson, false);
 		assertTrue(actual == null);
 		person = null;
@@ -162,8 +163,7 @@ public class ComparatorExtensionsTest
 	/**
 	 * Test method for {@link ComparatorExtensions} with {@link BeanTester}
 	 */
-	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
-			UnsupportedOperationException.class })
+	@Test
 	public void testWithBeanTester()
 	{
 		final BeanTester beanTester = new BeanTester();

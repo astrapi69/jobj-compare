@@ -22,15 +22,12 @@ package de.alpharogroup.comparators;
 
 import java.util.Comparator;
 
-import lombok.NoArgsConstructor;
-
 /**
  * The class {@link TestStringComparator} sorts String objects in ascending order as default. This
  * class is intended only for unit tests
  *
  * @author Asterios Raptis
  */
-@NoArgsConstructor
 public class TestStringComparator extends SortOrderComparator<String>
 {
 
@@ -84,6 +81,10 @@ public class TestStringComparator extends SortOrderComparator<String>
 	{
 		return NullCheckComparator.<String> of(SortOrderComparator.<String> of(sortOrder),
 			nullIsGreaterThan);
+	}
+
+	public TestStringComparator()
+	{
 	}
 
 	/**

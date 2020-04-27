@@ -20,31 +20,44 @@
  */
 package de.alpharogroup.comparators;
 
+import static org.testng.Assert.assertEquals;
+
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+
+import org.testng.annotations.Test;
+
+import com.google.common.collect.Lists;
 
 /**
- * The enum {@link CompareOrder} that encapsulates the possible return values of the method
- * {@link Comparator#compare(Object, Object)}
+ * The unit test class for the class {@link ComparatorFactory}
  */
-public enum CompareOrder
+public class ComparatorFactoryTest
 {
-	/** The order to sort an object after. */
-	AFTER(1),
-	/** The order to sort an object before. */
-	BEFORE(-1),
-	/** The order to sort an object as equal. */
-	EQUAL(0);
 
-	/** The order. */
-	private final int order;
-
-	CompareOrder(final int order)
+	/**
+	 * Test for method {@link ComparatorFactory#newComparator(List)}
+	 */
+	@Test
+	public void testNewComparator()
 	{
-		this.order = order;
+		List<Integer> values;
+		List<Integer> actual;
+		List<Integer> expected;
+		// new scenario...
+		values = Lists.newArrayList(1, 2, 3, 4, 5);
+		// change list to random sort order
+		Collections.shuffle(values);
+		// create the custom Comparator from the given list
+		Comparator<Integer> customComparator = ComparatorFactory.newComparator(values);
+		// create a new list to sort with the custom Comparator
+		actual = Lists.newArrayList(1, 2, 3, 4, 5);
+		// sort with the custom Comparator
+		Collections.sort(actual, customComparator);
+		// now the actual list have to be sorted as the values list
+		expected = values;
+		assertEquals(actual, expected);
 	}
 
-	public int getOrder()
-	{
-		return order;
-	}
 }

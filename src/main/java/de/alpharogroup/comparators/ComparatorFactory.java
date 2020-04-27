@@ -21,30 +21,29 @@
 package de.alpharogroup.comparators;
 
 import java.util.Comparator;
+import java.util.List;
+import java.util.Objects;
 
 /**
- * The enum {@link CompareOrder} that encapsulates the possible return values of the method
- * {@link Comparator#compare(Object, Object)}
+ * A factory for creating custom {@link Comparator} objects
  */
-public enum CompareOrder
+public class ComparatorFactory
 {
-	/** The order to sort an object after. */
-	AFTER(1),
-	/** The order to sort an object before. */
-	BEFORE(-1),
-	/** The order to sort an object as equal. */
-	EQUAL(0);
 
-	/** The order. */
-	private final int order;
-
-	CompareOrder(final int order)
+	/**
+	 * Factory method for create a new {@link Comparator} from the given {@link List} with the
+	 * defined order
+	 *
+	 * @param <T>
+	 *            the generic type of the elements
+	 * @param definedOrder
+	 *            the defined order
+	 * @return the comparator
+	 */
+	public static <T> Comparator<T> newComparator(final List<T> definedOrder)
 	{
-		this.order = order;
+		Objects.requireNonNull(definedOrder);
+		return Comparator.comparing(e -> definedOrder.indexOf(e));
 	}
 
-	public int getOrder()
-	{
-		return order;
-	}
 }
