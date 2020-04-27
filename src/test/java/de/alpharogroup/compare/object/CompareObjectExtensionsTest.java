@@ -32,6 +32,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.google.common.collect.Sets;
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.lang3.StringUtils;
 import org.meanbean.test.BeanTester;
@@ -179,7 +180,7 @@ public class CompareObjectExtensionsTest
 	 */
 	@Test(enabled = true)
 	public void testCompareTo()
-		throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
+			throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
 	{
 		int expected;
 		int actual;
@@ -192,6 +193,42 @@ public class CompareObjectExtensionsTest
 
 		expected = 0;
 		actual = CompareObjectExtensions.compareTo(sourceOjbect, objectToCompare);
+		assertEquals("Given objects should not be equal.", expected, actual);
+
+		sourceOjbect.setName("asterix");
+		expected = -14;
+		actual = CompareObjectExtensions.compareTo(sourceOjbect, objectToCompare);
+		assertEquals("Given objects should not be equal.", expected, actual);
+	}
+
+	/**
+	 * Test method for {@link CompareObjectExtensions#compareTo(Object, Object)}
+	 *
+	 * @throws IllegalAccessException
+	 *             Thrown if this {@code Method} object is enforcing Java language access control
+	 *             and the underlying method is inaccessible.
+	 * @throws InvocationTargetException
+	 *             Thrown if the property accessor method throws an exception
+	 * @throws NoSuchMethodException
+	 *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
+	 *             "&lt;clinit&gt;".
+	 *
+	 */
+	@Test(enabled = true)
+	public void testCompareToSetProperties()
+			throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
+	{
+		int expected;
+		int actual;
+		Person sourceOjbect;
+		Person objectToCompare;
+		// create a person...
+		sourceOjbect = Person.builder().gender(Gender.MALE).name("obelix").build();
+		// make a clone of it...
+		objectToCompare = Person.builder().gender(Gender.MALE).name("obelix").build();
+
+		expected = 0;
+		actual = CompareObjectExtensions.compareTo(sourceOjbect, objectToCompare, Sets.newHashSet("gender", "obelix"));
 		assertEquals("Given objects should not be equal.", expected, actual);
 
 		sourceOjbect.setName("asterix");
