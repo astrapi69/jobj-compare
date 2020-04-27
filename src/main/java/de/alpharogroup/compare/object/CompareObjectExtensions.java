@@ -106,7 +106,7 @@ public final class CompareObjectExtensions
 	}
 
 	/**
-	 * Compares the given two objects and returns the result as {@link int}.
+	 * Compares the given two objects and returns the result as int.
 	 *
 	 * @param sourceOjbect
 	 *            the source object
