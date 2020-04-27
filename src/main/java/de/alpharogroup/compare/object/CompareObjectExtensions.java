@@ -25,15 +25,14 @@ import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * The class {@link CompareObjectExtensions} provide methods for compare an object with another
  * given object.
  */
 public final class CompareObjectExtensions {
+    
     /**
      * Compares the given two objects.
      *
@@ -106,7 +105,7 @@ public final class CompareObjectExtensions {
         clonedBeanDescription.remove("class");
         int result = 0;
         for (final Object key : beanDescription.keySet()) {
-			result = +compareTo(sourceOjbect, objectToCompare, key.toString());
+			result += compareTo(sourceOjbect, objectToCompare, key.toString());
         }
         return result;
     }
@@ -167,9 +166,34 @@ public final class CompareObjectExtensions {
             throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         int result = 0;
         for (String property : properties) {
-            result = +compareTo(sourceOjbect, objectToCompare, property);
+            result += compareTo(sourceOjbect, objectToCompare, property);
         }
         return result;
+    }
+
+    /**
+     * Compares the given object over the given property.
+     *
+     * @param sourceOjbect
+     *            the source ojbect
+     * @param objectToCompare
+     *            the object to compare
+     * @param properties
+     *           properties to compare
+     * @return the resulted int value
+     * @throws IllegalAccessException
+     *             Thrown if this {@code Method} object is enforcing Java language access control
+     *             and the underlying method is inaccessible.
+     * @throws InvocationTargetException
+     *             Thrown if the property accessor method throws an exception
+     * @throws NoSuchMethodException
+     *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
+     *             "&lt;clinit&gt;".
+     */
+    public static int compare(final Object sourceOjbect, final Object objectToCompare,
+                                final String... properties)
+            throws IllegalAccessException, InvocationTargetException, NoSuchMethodException {
+        return compareTo(sourceOjbect, objectToCompare, new HashSet<>(Arrays.asList(properties)));
     }
 
     /**
@@ -204,7 +228,7 @@ public final class CompareObjectExtensions {
         final Map<String, Integer> compareResult = new HashMap<>();
         for (final Object key : beanDescription.keySet()) {
             compareResult.put(key.toString(),
-                    Integer.valueOf(compareTo(sourceOjbect, objectToCompare, key.toString())));
+                    compareTo(sourceOjbect, objectToCompare, key.toString()));
         }
         return compareResult;
     }
