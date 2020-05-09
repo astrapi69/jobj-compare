@@ -4,6 +4,9 @@
 Version 3.6-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- created new BeanComparator class 
 
 
 Version 3.5
