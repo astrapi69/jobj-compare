@@ -21,8 +21,11 @@
 package de.alpharogroup.compare.object;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
@@ -35,6 +38,7 @@ import de.alpharogroup.comparators.ComparatorExtensions;
  */
 public final class CompareObjectExtensions
 {
+
 	/**
 	 * Compares the given two objects.
 	 *
@@ -76,7 +80,33 @@ public final class CompareObjectExtensions
 	}
 
 	/**
-	 * Compares the given two objects and returns the result as {@link int}.
+	 * Compares the given object over the given property.
+	 *
+	 * @param sourceOjbect
+	 *            the source ojbect
+	 * @param objectToCompare
+	 *            the object to compare
+	 * @param properties
+	 *            properties to compare
+	 * @return the resulted int value
+	 * @throws IllegalAccessException
+	 *             Thrown if this {@code Method} object is enforcing Java language access control
+	 *             and the underlying method is inaccessible.
+	 * @throws InvocationTargetException
+	 *             Thrown if the property accessor method throws an exception
+	 * @throws NoSuchMethodException
+	 *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
+	 *             "&lt;clinit&gt;".
+	 */
+	public static int compare(final Object sourceOjbect, final Object objectToCompare,
+		final String... properties)
+		throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
+	{
+		return compareTo(sourceOjbect, objectToCompare, new HashSet<>(Arrays.asList(properties)));
+	}
+
+	/**
+	 * Compares the given two objects and returns the result as int.
 	 *
 	 * @param sourceOjbect
 	 *            the source object
@@ -116,15 +146,38 @@ public final class CompareObjectExtensions
 		int result = 0;
 		for (final Object key : beanDescription.keySet())
 		{
-			result = compareTo(sourceOjbect, objectToCompare, key.toString());
-			if (result == 0)
-			{
-				continue;
-			}
-			else
-			{
-				break;
-			}
+			result += compareTo(sourceOjbect, objectToCompare, key.toString());
+		}
+		return result;
+	}
+
+	/**
+	 * Compares the given object over the given property.
+	 *
+	 * @param sourceOjbect
+	 *            the source ojbect
+	 * @param objectToCompare
+	 *            the object to compare
+	 * @param properties
+	 *            the set of properties to compare
+	 * @return the resulted int value
+	 * @throws IllegalAccessException
+	 *             Thrown if this {@code Method} object is enforcing Java language access control
+	 *             and the underlying method is inaccessible.
+	 * @throws InvocationTargetException
+	 *             Thrown if the property accessor method throws an exception
+	 * @throws NoSuchMethodException
+	 *             Thrown if a matching method is not found or if the name is "&lt;init&gt;"or
+	 *             "&lt;clinit&gt;".
+	 */
+	public static int compareTo(final Object sourceOjbect, final Object objectToCompare,
+		final Set<String> properties)
+		throws IllegalAccessException, InvocationTargetException, NoSuchMethodException
+	{
+		int result = 0;
+		for (String property : properties)
+		{
+			result += compareTo(sourceOjbect, objectToCompare, property);
 		}
 		return result;
 	}
@@ -198,7 +251,7 @@ public final class CompareObjectExtensions
 		for (final Object key : beanDescription.keySet())
 		{
 			compareResult.put(key.toString(),
-				Integer.valueOf(compareTo(sourceOjbect, objectToCompare, key.toString())));
+				compareTo(sourceOjbect, objectToCompare, key.toString()));
 		}
 		return compareResult;
 	}

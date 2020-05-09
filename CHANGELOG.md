@@ -1,6 +1,26 @@
 ## Change log
 ----------------------
 
+Version 3.6
+-------------
+
+ADDED:
+ 
+- created new BeanComparator class 
+
+
+Version 3.5
+-------------
+
+ADDED:
+ 
+- added new methods that can compare over selected properties of the given objects
+
+CHANGED:
+
+- unit tests for new methods created
+- code coverage increased to 100%
+
 Version 3.4
 -------------
 
@@ -18,7 +38,6 @@ CHANGED:
 - update of test dependency guava version to 29.0-jre
 - update of test dependency test-objects version to 5.3
 - update of test dependency testng version to 7.2.0
-- code coverage increased to 100%
 
 Version 3.3
 -------------

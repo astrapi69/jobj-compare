@@ -11,7 +11,7 @@ apply plugin: "jacoco"
 
 group = "de.alpharogroup"
 version = "$projectVersion"
-description = "jobj-compare"
+description = "$rootProject.name"
 sourceCompatibility = "1.8"
 
 repositories {
@@ -161,4 +161,3 @@ jacocoTestReport {
 }
 
 check.dependsOn jacocoTestReport
-
