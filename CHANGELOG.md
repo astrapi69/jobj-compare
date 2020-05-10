@@ -1,6 +1,14 @@
 ## Change log
 ----------------------
 
+Version 3.6
+-------------
+
+ADDED:
+ 
+- created new BeanComparator class 
+
+
 Version 3.5
 -------------
 
