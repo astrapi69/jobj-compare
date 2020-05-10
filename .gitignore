@@ -10,9 +10,7 @@
 *.iml
 *.ipr
 !.idea/runConfigurations
-.idea/inspectionProfiles
-.idea/libraries
-.idea/codeStyles
+.idea/**
 .idea/*.*
 
 #################
