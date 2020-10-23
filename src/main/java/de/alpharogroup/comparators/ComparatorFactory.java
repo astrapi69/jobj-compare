@@ -20,9 +20,8 @@
  */
 package de.alpharogroup.comparators;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.security.SecureRandom;
+import java.util.*;
 
 /**
  * A factory for creating custom {@link Comparator} objects
@@ -44,6 +43,36 @@ public class ComparatorFactory
 	{
 		Objects.requireNonNull(definedOrder);
 		return Comparator.comparing(e -> definedOrder.indexOf(e));
+	}
+
+	/**
+	 * Factory method for create a comparator for random sort of map values
+	 *
+	 * @param map
+	 *            the map
+	 * @param secureRandom
+	 *            the secure random object for random generation
+	 * @return the comparator with random sort of map values
+	 */
+	public static<K, V> Comparator<V> newRandomMapValuesComparator(
+			Map<K, V> map, SecureRandom secureRandom)
+	{
+		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
+		Collections.shuffle(numberCounterValues, secureRandom);
+		return ComparatorFactory.newComparator(numberCounterValues);
+	}
+
+	/**
+	 * Factory method for create a comparator for sort with the map values
+	 *
+	 * @param map
+	 *            the map
+	 * @return the comparator for sort with the map values
+	 */
+	public static<K, V> Comparator<V> newMapValuesComparator(Map<K, V> map)
+	{
+		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
+		return ComparatorFactory.newComparator(numberCounterValues);
 	}
 
 }

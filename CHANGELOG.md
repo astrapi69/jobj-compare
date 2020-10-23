@@ -4,6 +4,19 @@
 Version 3.7-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- created new factory methods for create a comparator from the values of a map
+- created new factory methods for create a random comparator from the values of a map
+
+CHANGED:
+
+- upgrade gradle version to 6.7
+- update of gradle plugin com.github.ben-manes.versions version to 0.33.0
+- update of test dependency guava version to 30.0-jre
+- update of test dependency commons-lang3 version to 3.11
+- update of test dependency testng version to 7.3.0
+
 Version 3.6
 -------------
 
