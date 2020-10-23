@@ -42,12 +42,16 @@ public class ComparatorFactory
 	public static <T> Comparator<T> newComparator(final List<T> definedOrder)
 	{
 		Objects.requireNonNull(definedOrder);
-		return Comparator.comparing(e -> definedOrder.indexOf(e));
+		return Comparator.comparing(definedOrder::indexOf);
 	}
 
 	/**
 	 * Factory method for create a comparator for random sort of map values
 	 *
+	 * @param <K>
+	 *            the generic type of the key
+	 * @param <V>
+	 *            the generic type of the value
 	 * @param map
 	 *            the map
 	 * @param secureRandom
@@ -65,6 +69,10 @@ public class ComparatorFactory
 	/**
 	 * Factory method for create a comparator for sort with the map values
 	 *
+	 * @param <K>
+	 *            the generic type of the key
+	 * @param <V>
+	 *            the generic type of the value
 	 * @param map
 	 *            the map
 	 * @return the comparator for sort with the map values
