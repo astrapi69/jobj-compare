@@ -93,7 +93,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.7</jobj-compare.version>
+		<jobj-compare.version>3.8</jobj-compare.version>
 			...
 	</properties>
 			...
@@ -119,7 +119,7 @@ define version in file gradle.properties
 
 ```
 
-jobjCompareVersion=3.7
+jobjCompareVersion=3.8
 ```
 
 or in build.gradle ext area
@@ -127,7 +127,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    jobjCompareVersion = "3.7"
+    jobjCompareVersion = "3.8"
 			...
 }
 ```
