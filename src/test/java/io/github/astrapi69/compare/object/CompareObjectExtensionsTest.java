@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.compare.object;
+package io.github.astrapi69.compare.object;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
@@ -40,9 +40,9 @@ import org.testng.annotations.Test;
 
 import com.google.common.collect.Sets;
 
-import de.alpharogroup.test.objects.Permission;
-import de.alpharogroup.test.objects.Person;
-import de.alpharogroup.test.objects.enums.Gender;
+import io.github.astrapi69.test.objects.Permission;
+import io.github.astrapi69.test.objects.Person;
+import io.github.astrapi69.test.objects.enums.Gender;
 
 /**
  * The unit test class for the class {@link CompareObjectExtensions}.

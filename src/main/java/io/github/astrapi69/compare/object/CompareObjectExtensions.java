@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.compare.object;
+package io.github.astrapi69.compare.object;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
@@ -30,7 +30,7 @@ import java.util.Set;
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
 
-import de.alpharogroup.comparators.ComparatorExtensions;
+import io.github.astrapi69.comparators.ComparatorExtensions;
 
 /**
  * The class {@link CompareObjectExtensions} provide methods for compare an object with another

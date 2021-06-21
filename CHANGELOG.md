@@ -4,6 +4,16 @@
 Version 3.8-SNAPSHOT
 -------------
 
+CHANGED:
+
+- changed to new package io.github.astrapi69
+- upgrade gradle version to 6.9
+- update of test dependency test-objects to new version 5.4
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
+- update of test dependency commons-lang3 version to 3.12.0
+- update of test dependency guava version to 30.1.1-jre
+- update of test dependency testng version to 7.4.0
+
 Version 3.7
 -------------
 
