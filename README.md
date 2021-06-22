@@ -1,6 +1,6 @@
 # Overview
 
-<div align="center">
+<div style="text-align: center">
 
 [![Build Status](https://api.travis-ci.com/astrapi69/jobj-compare.svg?branch=master)](https://travis-ci.com/github/astrapi69/jobj-compare) 
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master) 
@@ -70,7 +70,7 @@ alt="Donation Monero Wallet" width="250"/>
 or over flattr:
   
 <a href="http://flattr.com/thing/4067696/astrapi69jobj-compare-on-GitHub" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
 </a>
 
 ## Note
