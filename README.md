@@ -13,7 +13,16 @@
 
 Utility library for simply compare java objects.
 
-If you like this project put a ⭐ and donate.
+# Support this project
+
+> Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/astrapi69/jobj-compare" data-icon="octicon-star" aria-label="Star astrapi69/jobj-compare on GitHub">Star ⭐</a>
+>
+> Share this library with friends on Twitter and everywhere else you can
+>
+> If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
+>
+> or for more donation options go the [donations section](#Donations)
 
 ## Maven dependency
 
@@ -27,7 +36,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.8</jobj-compare.version>
+		<jobj-compare.version>3.9</jobj-compare.version>
 			...
 	</properties>
 			...
@@ -48,12 +57,10 @@ Than you can add the dependency to your dependencies:
 You can first define the version in the ext section and add than the following gradle dependency to
 your project `build.gradle` if you want to import the core functionality of jobj-compare:
 
-
 define version in file gradle.properties
 
 ```
-
-jobjCompareVersion=3.8
+jobjCompareVersion=3.9
 ```
 
 or in build.gradle ext area
@@ -61,7 +68,7 @@ or in build.gradle ext area
 ```
 ext {
 			...
-    jobjCompareVersion = "3.8"
+    jobjCompareVersion = "3.9"
 			...
 }
 ```
@@ -75,7 +82,7 @@ implementation("io.github.astrapi69:jobj-compare:$jobjCompareVersion")
 			...
 }
 ```
-~~~~
+
 # Donations
 
 This project is kept as an open source product and relies on contributions to remain being
