@@ -75,6 +75,8 @@ public class ComparatorFactory
 	 *            the generic type of the elements
 	 * @param list
 	 *            the defined order
+	 * @param secureRandom
+	 *            the secure random object for random generation
 	 * @return the comparator
 	 */
 	public static <T> Comparator<T> newRandomComparator(final List<T> list,
