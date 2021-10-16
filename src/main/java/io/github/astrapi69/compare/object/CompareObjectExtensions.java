@@ -39,6 +39,10 @@ import io.github.astrapi69.comparators.ComparatorExtensions;
 public final class CompareObjectExtensions
 {
 
+	private CompareObjectExtensions()
+	{
+	}
+
 	/**
 	 * Compares the given two objects.
 	 *
@@ -254,10 +258,6 @@ public final class CompareObjectExtensions
 				compareTo(sourceOjbect, objectToCompare, key.toString()));
 		}
 		return compareResult;
-	}
-
-	private CompareObjectExtensions()
-	{
 	}
 
 }

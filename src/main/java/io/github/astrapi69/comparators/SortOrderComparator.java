@@ -34,6 +34,27 @@ public class SortOrderComparator<T extends Comparable<T>> implements Comparator<
 
 	/** The constant default sort order. */
 	public static final SortOrder DEFAULT_SORT_ORDER = SortOrder.ASCENDING;
+	/** The sort order. Default is ascending. */
+	private SortOrder sortOrder = SortOrder.ASCENDING;
+
+	/**
+	 * Instantiates a new {@link SortOrderComparator} with the default sort order.
+	 */
+	public SortOrderComparator()
+	{
+		this(DEFAULT_SORT_ORDER);
+	}
+
+	/**
+	 * Instantiates a new {@link SortOrderComparator} with the given sort order.
+	 *
+	 * @param sortOrder
+	 *            the sort order
+	 */
+	public SortOrderComparator(final SortOrder sortOrder)
+	{
+		this.sortOrder = sortOrder;
+	}
 
 	/**
 	 * Factory method to create a new {@link SortOrderComparator} with the default sort order.
@@ -61,28 +82,6 @@ public class SortOrderComparator<T extends Comparable<T>> implements Comparator<
 	public static <T extends Comparable<T>> Comparator<T> of(final SortOrder sortOrder)
 	{
 		return new SortOrderComparator<T>(sortOrder);
-	}
-
-	/** The sort order. Default is ascending. */
-	private SortOrder sortOrder = SortOrder.ASCENDING;
-
-	/**
-	 * Instantiates a new {@link SortOrderComparator} with the default sort order.
-	 */
-	public SortOrderComparator()
-	{
-		this(DEFAULT_SORT_ORDER);
-	}
-
-	/**
-	 * Instantiates a new {@link SortOrderComparator} with the given sort order.
-	 *
-	 * @param sortOrder
-	 *            the sort order
-	 */
-	public SortOrderComparator(final SortOrder sortOrder)
-	{
-		this.sortOrder = sortOrder;
 	}
 
 	/**

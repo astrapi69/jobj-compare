@@ -102,7 +102,7 @@ public class NullCheckComparatorTest
 	}
 
 	/**
-	 * Test method for {@link NullCheckComparator#compare(Object, Object)} 
+	 * Test method for {@link NullCheckComparator#compare(Object, Object)}
 	 */
 	@Test
 	public void testCompareStringComparator()

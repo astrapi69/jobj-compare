@@ -173,6 +173,17 @@ public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 	}
 
 	/**
+	 * Sets the property.
+	 *
+	 * @param property
+	 *            the new property
+	 */
+	public void setProperty(final String property)
+	{
+		this.property = property;
+	}
+
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -191,16 +202,5 @@ public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 		// to make the compiler happy
 		Comparator internalComparator = comparator;
 		return internalComparator.compare(val1, val2);
-	}
-
-	/**
-	 * Sets the property.
-	 *
-	 * @param property
-	 *            the new property
-	 */
-	public void setProperty(final String property)
-	{
-		this.property = property;
 	}
 }

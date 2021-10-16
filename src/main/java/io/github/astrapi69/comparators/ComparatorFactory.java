@@ -98,8 +98,8 @@ public class ComparatorFactory
 	 *            the secure random object for random generation
 	 * @return the comparator with random sort of map values
 	 */
-	public static<K, V> Comparator<V> newRandomMapValuesComparator(
-			Map<K, V> map, SecureRandom secureRandom)
+	public static <K, V> Comparator<V> newRandomMapValuesComparator(Map<K, V> map,
+		SecureRandom secureRandom)
 	{
 		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
 		Collections.shuffle(numberCounterValues, secureRandom);
@@ -117,7 +117,7 @@ public class ComparatorFactory
 	 *            the map
 	 * @return the comparator for sort with the map values
 	 */
-	public static<K, V> Comparator<V> newMapValuesComparator(Map<K, V> map)
+	public static <K, V> Comparator<V> newMapValuesComparator(Map<K, V> map)
 	{
 		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
 		return ComparatorFactory.newComparator(numberCounterValues);

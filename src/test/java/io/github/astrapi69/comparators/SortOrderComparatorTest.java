@@ -33,7 +33,7 @@ public class SortOrderComparatorTest
 {
 
 	/**
-	 * Test method for {@link SortOrderComparator#compare(Comparable, Comparable)} 
+	 * Test method for {@link SortOrderComparator#compare(Comparable, Comparable)}
 	 */
 	@Test
 	public void testComparable()

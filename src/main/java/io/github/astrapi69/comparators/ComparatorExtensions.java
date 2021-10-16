@@ -25,6 +25,10 @@ package io.github.astrapi69.comparators;
  */
 public final class ComparatorExtensions
 {
+	private ComparatorExtensions()
+	{
+	}
+
 	/**
 	 * Compares the given objects and returns the int value.
 	 *
@@ -154,10 +158,6 @@ public final class ComparatorExtensions
 			return 1;// compareWithObject is null so its bigger
 		}
 		return null;
-	}
-
-	private ComparatorExtensions()
-	{
 	}
 
 }

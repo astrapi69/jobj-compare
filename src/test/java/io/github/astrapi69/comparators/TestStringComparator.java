@@ -31,6 +31,21 @@ import java.util.Comparator;
 public class TestStringComparator extends SortOrderComparator<String>
 {
 
+	public TestStringComparator()
+	{
+	}
+
+	/**
+	 * Instantiates a new {@link TestStringComparator}.
+	 *
+	 * @param sortOrder
+	 *            the sort order
+	 */
+	public TestStringComparator(final SortOrder sortOrder)
+	{
+		super(sortOrder);
+	}
+
 	/**
 	 * Factory method to create a new {@link TestStringComparator} object.
 	 *
@@ -81,21 +96,6 @@ public class TestStringComparator extends SortOrderComparator<String>
 	{
 		return NullCheckComparator.<String> of(SortOrderComparator.<String> of(sortOrder),
 			nullIsGreaterThan);
-	}
-
-	public TestStringComparator()
-	{
-	}
-
-	/**
-	 * Instantiates a new {@link TestStringComparator}.
-	 *
-	 * @param sortOrder
-	 *            the sort order
-	 */
-	public TestStringComparator(final SortOrder sortOrder)
-	{
-		super(sortOrder);
 	}
 
 }

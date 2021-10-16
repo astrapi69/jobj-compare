@@ -34,47 +34,50 @@ import java.util.Comparator;
  */
 public class NullCheckComparator<T> implements Comparator<T>, Serializable
 {
-	public static class NullCheckComparatorBuilder<T>
-	{
-
-		private Comparator<T> decoratedComparator;
-
-		private boolean nullIsGreaterThan;
-
-		NullCheckComparatorBuilder()
-		{
-		}
-
-		public NullCheckComparator<T> build()
-		{
-			return new NullCheckComparator<T>(decoratedComparator, nullIsGreaterThan);
-		}
-
-		public NullCheckComparatorBuilder<T> decoratedComparator(
-			final Comparator<T> decoratedComparator)
-		{
-			this.decoratedComparator = decoratedComparator;
-			return this;
-		}
-
-		public NullCheckComparatorBuilder<T> nullIsGreaterThan(final boolean nullIsGreaterThan)
-		{
-			this.nullIsGreaterThan = nullIsGreaterThan;
-			return this;
-		}
-
-		@Override
-		public String toString()
-		{
-			return "NullCheckComparator.NullCheckComparatorBuilder(decoratedComparator="
-				+ this.decoratedComparator + ", nullIsGreaterThan=" + this.nullIsGreaterThan + ")";
-		}
-	}
-
 	/**
 	 * The Constant serialVersionUID.
 	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The decorated comparator.
+	 */
+	private final Comparator<T> decoratedComparator;
+	/**
+	 * The flag that specifies if null objects is greater than non null objects.
+	 */
+	private final boolean nullIsGreaterThan;
+
+	/**
+	 * Instantiates a {@link NullCheckComparator} from the given {@link Comparator} object. The flag
+	 * nullIsGreaterThan is set to false so null objects are smaller then non null objects.
+	 *
+	 * @param decoratedComparator
+	 *            the {@link Comparator} object that will be decorated
+	 */
+	public NullCheckComparator(final Comparator<T> decoratedComparator)
+	{
+		this(decoratedComparator, false);
+	}
+
+	/**
+	 * Instantiates a {@link NullCheckComparator} from the given {@link Comparator} object and the
+	 * given flag.
+	 *
+	 * @param decoratedComparator
+	 *            the {@link Comparator} object that will be decorated
+	 * @param nullIsGreaterThan
+	 *            the flag that specifies if null objects is greater than non null objects.
+	 */
+	public NullCheckComparator(final Comparator<T> decoratedComparator,
+		final boolean nullIsGreaterThan)
+	{
+		if (decoratedComparator == null)
+		{
+			throw new IllegalArgumentException("Given decoratedComparator may not be null.");
+		}
+		this.decoratedComparator = decoratedComparator;
+		this.nullIsGreaterThan = nullIsGreaterThan;
+	}
 
 	public static <T> NullCheckComparatorBuilder<T> builder()
 	{
@@ -116,48 +119,6 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 	}
 
 	/**
-	 * The decorated comparator.
-	 */
-	private final Comparator<T> decoratedComparator;
-
-	/**
-	 * The flag that specifies if null objects is greater than non null objects.
-	 */
-	private final boolean nullIsGreaterThan;
-
-	/**
-	 * Instantiates a {@link NullCheckComparator} from the given {@link Comparator} object. The flag
-	 * nullIsGreaterThan is set to false so null objects are smaller then non null objects.
-	 *
-	 * @param decoratedComparator
-	 *            the {@link Comparator} object that will be decorated
-	 */
-	public NullCheckComparator(final Comparator<T> decoratedComparator)
-	{
-		this(decoratedComparator, false);
-	}
-
-	/**
-	 * Instantiates a {@link NullCheckComparator} from the given {@link Comparator} object and the
-	 * given flag.
-	 *
-	 * @param decoratedComparator
-	 *            the {@link Comparator} object that will be decorated
-	 * @param nullIsGreaterThan
-	 *            the flag that specifies if null objects is greater than non null objects.
-	 */
-	public NullCheckComparator(final Comparator<T> decoratedComparator,
-		final boolean nullIsGreaterThan)
-	{
-		if (decoratedComparator == null)
-		{
-			throw new IllegalArgumentException("Given decoratedComparator may not be null.");
-		}
-		this.decoratedComparator = decoratedComparator;
-		this.nullIsGreaterThan = nullIsGreaterThan;
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -170,5 +131,42 @@ public class NullCheckComparator<T> implements Comparator<T>, Serializable
 			return nullCheck.intValue();
 		}
 		return this.decoratedComparator.compare(object, compareWithObject);
+	}
+
+	public static class NullCheckComparatorBuilder<T>
+	{
+
+		private Comparator<T> decoratedComparator;
+
+		private boolean nullIsGreaterThan;
+
+		NullCheckComparatorBuilder()
+		{
+		}
+
+		public NullCheckComparator<T> build()
+		{
+			return new NullCheckComparator<T>(decoratedComparator, nullIsGreaterThan);
+		}
+
+		public NullCheckComparatorBuilder<T> decoratedComparator(
+			final Comparator<T> decoratedComparator)
+		{
+			this.decoratedComparator = decoratedComparator;
+			return this;
+		}
+
+		public NullCheckComparatorBuilder<T> nullIsGreaterThan(final boolean nullIsGreaterThan)
+		{
+			this.nullIsGreaterThan = nullIsGreaterThan;
+			return this;
+		}
+
+		@Override
+		public String toString()
+		{
+			return "NullCheckComparator.NullCheckComparatorBuilder(decoratedComparator="
+				+ this.decoratedComparator + ", nullIsGreaterThan=" + this.nullIsGreaterThan + ")";
+		}
 	}
 }

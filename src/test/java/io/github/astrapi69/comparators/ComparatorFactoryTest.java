@@ -44,6 +44,33 @@ public class ComparatorFactoryTest
 {
 
 	/**
+	 * Factory method for create a map for and count elements of the given collection
+	 *
+	 * @param <K>
+	 *            the generic type of the elements
+	 * @param counterMap
+	 *            the counter Map
+	 * @param elements
+	 *            the elements
+	 * @return the new map ready to count elements
+	 */
+	private static <K> Map<K, Integer> newCounterMap(Map<K, Integer> counterMap,
+		Collection<K> elements)
+	{
+		Objects.requireNonNull(counterMap);
+		for (K element : elements)
+		{
+			if (counterMap.containsKey(element))
+			{
+				counterMap.merge(element, 1, Integer::sum);
+				continue;
+			}
+			counterMap.put(element, 0);
+		}
+		return counterMap;
+	}
+
+	/**
 	 * Test for method {@link ComparatorFactory#newComparator(List)}
 	 */
 	@Test
@@ -71,16 +98,16 @@ public class ComparatorFactoryTest
 	 * Test for method {@link ComparatorFactory#newMapValuesComparator(Map)}
 	 */
 	@Test
-	public void testNewMapValuesComparator() {
+	public void testNewMapValuesComparator()
+	{
 
 		List<Integer> values;
-		List<Integer> actual;
-		List<Integer> expected;
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
 		Map<Integer, Integer> numberCounterMap;
 		numberCounterMap = newCounterMap(new HashMap<>(), values);
-		Comparator<Integer> integerComparator = ComparatorFactory.newMapValuesComparator(numberCounterMap);
+		Comparator<Integer> integerComparator = ComparatorFactory
+			.newMapValuesComparator(numberCounterMap);
 		assertNotNull(integerComparator);
 	}
 
@@ -88,16 +115,16 @@ public class ComparatorFactoryTest
 	 * Test for method {@link ComparatorFactory#newRandomMapValuesComparator(Map, SecureRandom)}
 	 */
 	@Test
-	public void testNewRandomMapValuesComparator() throws NoSuchAlgorithmException {
+	public void testNewRandomMapValuesComparator() throws NoSuchAlgorithmException
+	{
 
 		List<Integer> values;
-		List<Integer> actual;
-		List<Integer> expected;
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
 		Map<Integer, Integer> numberCounterMap;
 		numberCounterMap = newCounterMap(new HashMap<>(), values);
-		Comparator<Integer> integerComparator = ComparatorFactory.newRandomMapValuesComparator(numberCounterMap, SecureRandom.getInstanceStrong());
+		Comparator<Integer> integerComparator = ComparatorFactory
+			.newRandomMapValuesComparator(numberCounterMap, SecureRandom.getInstanceStrong());
 		assertNotNull(integerComparator);
 	}
 
@@ -132,32 +159,5 @@ public class ComparatorFactoryTest
 		Comparator<Integer> randomComparator = ComparatorFactory.newRandomComparator(values,
 			new SecureRandom());
 		assertNotNull(randomComparator);
-	}
-
-	/**
-	 * Factory method for create a map for and count elements of the given collection
-	 *
-	 * @param <K>
-	 *            the generic type of the elements
-	 * @param counterMap
-	 *            the counter Map
-	 * @param elements
-	 *            the elements
-	 * @return the new map ready to count elements
-	 */
-	private static <K> Map<K, Integer> newCounterMap(Map<K, Integer> counterMap,
-													Collection<K> elements)
-	{
-		Objects.requireNonNull(counterMap);
-		for (K element : elements)
-		{
-			if (counterMap.containsKey(element))
-			{
-				counterMap.merge(element, 1, Integer::sum);
-				continue;
-			}
-			counterMap.put(element, 0);
-		}
-		return counterMap;
 	}
 }
