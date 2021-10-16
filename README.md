@@ -15,6 +15,67 @@ Utility library for simply compare java objects.
 
 If you like this project put a ⭐ and donate.
 
+## Maven dependency
+
+Maven dependency is now on sonatype.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-compare~~~) for latest snapshots and releases.
+
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-compare:
+
+Than you can add the dependency to your dependencies:
+
+	<properties>
+			...
+		<!-- JOBJ-COMPARE version -->
+		<jobj-compare.version>3.8</jobj-compare.version>
+			...
+	</properties>
+			...
+		<dependencies>
+			...
+			<!-- JOBJ-COMPARE DEPENDENCY -->
+			<dependency>
+				<groupId>io.github.astrapi69</groupId>
+				<artifactId>jobj-compare</artifactId>
+				<version>${jobj-compare.version}</version>
+			</dependency>
+			...
+		</dependencies>
+
+
+## gradle dependency
+
+You can first define the version in the ext section and add than the following gradle dependency to
+your project `build.gradle` if you want to import the core functionality of jobj-compare:
+
+
+define version in file gradle.properties
+
+```
+
+jobjCompareVersion=3.8
+```
+
+or in build.gradle ext area
+
+```
+ext {
+			...
+    jobjCompareVersion = "3.8"
+			...
+}
+```
+
+and than add the dependency to the dependencies area
+
+```
+dependencies {
+			...
+implementation("io.github.astrapi69:jobj-compare:$jobjCompareVersion")
+			...
+}
+```
+~~~~
 # Donations
 
 This project is kept as an open source product and relies on contributions to remain being
@@ -80,67 +141,6 @@ No animals were harmed in the making of this library.
 ## License
 
 The source code comes under the liberal MIT License, making jobj-compare great for all types of applications.
-
-## Maven dependency
-
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-compare~~~) for latest snapshots and releases.
-
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-compare:
-
-Than you can add the dependency to your dependencies:
-
-	<properties>
-			...
-		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.8</jobj-compare.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- JOBJ-COMPARE DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>jobj-compare</artifactId>
-				<version>${jobj-compare.version}</version>
-			</dependency>
-			...
-		</dependencies>
-
-			
-## gradle dependency
-
-You can first define the version in the ext section and add than the following gradle dependency to 
-your project `build.gradle` if you want to import the core functionality of jobj-compare:
-
-
-define version in file gradle.properties
-
-```
-
-jobjCompareVersion=3.8
-```
-
-or in build.gradle ext area
-
-```
-ext {
-			...
-    jobjCompareVersion = "3.8"
-			...
-}
-```
-
-and than add the dependency to the dependencies area
-
-```
-dependencies {
-			...
-implementation("io.github.astrapi69:jobj-compare:$jobjCompareVersion")
-			...
-}
-```
 
 ## Semantic Versioning
 

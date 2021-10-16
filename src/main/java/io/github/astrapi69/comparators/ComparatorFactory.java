@@ -21,7 +21,13 @@
 package io.github.astrapi69.comparators;
 
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeSet;
 
 /**
  * A factory for creating custom {@link Comparator} objects
@@ -43,6 +49,40 @@ public class ComparatorFactory
 	{
 		Objects.requireNonNull(definedOrder);
 		return Comparator.comparing(definedOrder::indexOf);
+	}
+
+	/**
+	 * Factory method for create a new {@link Comparator} from the given {@link List} with a random
+	 * order.
+	 *
+	 * @param <T>
+	 *            the generic type of the elements
+	 * @param list
+	 *            the defined order
+	 * @return the comparator
+	 */
+	public static <T> Comparator<T> newRandomComparator(final List<T> list)
+	{
+		Objects.requireNonNull(list);
+		return newRandomComparator(list, new SecureRandom());
+	}
+
+	/**
+	 * Factory method for create a new {@link Comparator} from the given {@link List} with a random
+	 * order.
+	 *
+	 * @param <T>
+	 *            the generic type of the elements
+	 * @param list
+	 *            the defined order
+	 * @return the comparator
+	 */
+	public static <T> Comparator<T> newRandomComparator(final List<T> list,
+		SecureRandom secureRandom)
+	{
+		Objects.requireNonNull(list);
+		Collections.shuffle(list, secureRandom);
+		return Comparator.comparing(list::indexOf);
 	}
 
 	/**

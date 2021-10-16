@@ -30,15 +30,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
-    testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
-    testImplementation("com.google.guava:guava:$guavaVersion")
-    testImplementation("io.github.astrapi69:test-objects:$testObjectsVersion")
-    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("org.testng:testng:$testngVersion")
-}
-
 tasks.withType(GenerateModuleMetadata) {
     enabled = false
 }
@@ -191,3 +182,12 @@ license {
 // workhack for license issue #76
 gradle.startParameter.excludedTaskNames += "licenseMain"
 gradle.startParameter.excludedTaskNames += "licenseTest"
+
+dependencies {
+    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
+    testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+    testImplementation("com.google.guava:guava:$guavaVersion")
+    testImplementation("io.github.astrapi69:test-objects:$testObjectsVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("org.testng:testng:$testngVersion")
+}

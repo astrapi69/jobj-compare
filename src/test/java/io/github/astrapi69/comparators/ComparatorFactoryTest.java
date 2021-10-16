@@ -25,7 +25,13 @@ import static org.testng.Assert.assertNotNull;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import org.testng.annotations.Test;
 
@@ -55,7 +61,7 @@ public class ComparatorFactoryTest
 		// create a new list to sort with the custom Comparator
 		actual = Lists.newArrayList(1, 2, 3, 4, 5);
 		// sort with the custom Comparator
-		Collections.sort(actual, customComparator);
+		actual.sort(customComparator);
 		// now the actual list have to be sorted as the values list
 		expected = values;
 		assertEquals(actual, expected);
@@ -95,6 +101,38 @@ public class ComparatorFactoryTest
 		assertNotNull(integerComparator);
 	}
 
+	/**
+	 * Test for method {@link ComparatorFactory#newRandomComparator(List)}
+	 */
+	@Test
+	public void testNewRandomComparator()
+	{
+		List<Integer> values;
+		// new scenario...
+		values = Lists.newArrayList(1, 2, 3, 4, 5);
+		// change list to random sort order
+		Collections.shuffle(values);
+		// create the random Comparator from the given list
+		Comparator<Integer> randomComparator = ComparatorFactory.newRandomComparator(values);
+		assertNotNull(randomComparator);
+	}
+
+	/**
+	 * Test for method {@link ComparatorFactory#newRandomComparator(List, SecureRandom)}
+	 */
+	@Test
+	public void testNewRandomComparatorWithSecureRandom()
+	{
+		List<Integer> values;
+		// new scenario...
+		values = Lists.newArrayList(1, 2, 3, 4, 5);
+		// change list to random sort order
+		Collections.shuffle(values);
+		// create the random Comparator from the given list
+		Comparator<Integer> randomComparator = ComparatorFactory.newRandomComparator(values,
+			new SecureRandom());
+		assertNotNull(randomComparator);
+	}
 
 	/**
 	 * Factory method for create a map for and count elements of the given collection

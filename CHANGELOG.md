@@ -4,6 +4,15 @@
 Version 3.9-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update gradle to new version 7.2
+- update gradle-plugin dependency of gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin to new version 0.16.1
+- new factory method for create a random order of a given list
+- new factory method for create a random order of a given list with a given SecureRandom object
+- update of test dependency test-objects to new version 5.5
+- update of test dependency guava version to 31.0.1-jre
+
 Version 3.8
 -------------
 
