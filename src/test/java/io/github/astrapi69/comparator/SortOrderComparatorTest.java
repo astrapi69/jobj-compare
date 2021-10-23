@@ -24,8 +24,6 @@ import static org.testng.AssertJUnit.assertTrue;
 
 import java.util.Comparator;
 
-import io.github.astrapi69.comparator.SortOrder;
-import io.github.astrapi69.comparator.SortOrderComparator;
 import org.testng.annotations.Test;
 
 /**
@@ -66,14 +64,14 @@ public class SortOrderComparatorTest
 		assertTrue(comparator.compare(i1, greater) < 0);
 		assertTrue(comparator.compare(i1, null) > 0);
 
-		comparator = SortOrderComparator.<Integer> of();
+		comparator = SortOrderComparator.of();
 
 		assertTrue(comparator.compare(i1, lesser) > 0);
 		assertTrue(comparator.compare(i1, same) == 0);
 		assertTrue(comparator.compare(i1, greater) < 0);
 		assertTrue(comparator.compare(i1, null) > 0);
 
-		comparator = SortOrderComparator.<Integer> of(SortOrder.DESCENDING);
+		comparator = SortOrderComparator.of(SortOrder.DESCENDING);
 
 		assertTrue(comparator.compare(i1, lesser) < 0);
 		assertTrue(comparator.compare(i1, same) == 0);

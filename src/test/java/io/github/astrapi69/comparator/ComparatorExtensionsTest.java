@@ -24,8 +24,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;
 import static org.testng.AssertJUnit.assertTrue;
 
-import io.github.astrapi69.comparator.ComparatorExtensions;
-import io.github.astrapi69.comparator.SortOrder;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 

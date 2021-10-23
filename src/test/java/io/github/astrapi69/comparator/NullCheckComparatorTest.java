@@ -46,7 +46,7 @@ public class NullCheckComparatorTest
 		int expected;
 		int actual;
 		Comparator<Locale> localeComparator = NullCheckComparator
-			.<Locale> of(new TestLocaleComparator());
+			.of(new TestLocaleComparator());
 		String toString = NullCheckComparator.builder().toString();
 		assertEquals(
 			"NullCheckComparator."

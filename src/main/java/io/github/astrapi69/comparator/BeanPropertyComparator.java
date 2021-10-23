@@ -104,15 +104,15 @@ public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 		}
 		catch (final IllegalAccessException iae)
 		{
-			throw new RuntimeException("IllegalAccessException: " + iae.toString());
+			throw new RuntimeException("IllegalAccessException: " + iae);
 		}
 		catch (final InvocationTargetException ite)
 		{
-			throw new RuntimeException("InvocationTargetException: " + ite.toString());
+			throw new RuntimeException("InvocationTargetException: " + ite);
 		}
 		catch (NoSuchMethodException e)
 		{
-			throw new RuntimeException("NoSuchMethodException: " + e.toString());
+			throw new RuntimeException("NoSuchMethodException: " + e);
 		}
 	}
 
@@ -139,17 +139,12 @@ public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 		}
 		if (property != null)
 		{
-			if (!property.equals(beanComparator.property))
-			{
-				return false;
-			}
+			return property.equals(beanComparator.property);
 		}
 		else
 		{
 			return (beanComparator.property == null);
 		}
-
-		return true;
 	}
 
 	/**

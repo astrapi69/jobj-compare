@@ -24,7 +24,6 @@ import static org.testng.Assert.assertEquals;
 
 import java.lang.reflect.InvocationTargetException;
 
-import io.github.astrapi69.comparator.CompareOrder;
 import org.meanbean.test.BeanTestException;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;

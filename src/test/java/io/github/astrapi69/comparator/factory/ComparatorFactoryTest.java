@@ -104,8 +104,7 @@ public class ComparatorFactoryTest
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
 		numberCounterMap = TestDataFactory.newCounterMap(new HashMap<>(), values);
-		integerComparator = ComparatorFactory
-			.newMapValuesComparator(numberCounterMap);
+		integerComparator = ComparatorFactory.newMapValuesComparator(numberCounterMap);
 		assertNotNull(integerComparator);
 	}
 
