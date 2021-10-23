@@ -1,10 +1,17 @@
 ## Change log
 ----------------------
 
-Version 3.10-SNAPSHOT
+Version 8-SNAPSHOT
 -------------
 
+ADDED:
 
+- created new factory method for create a comparator with a defined order
+
+CHANGED:
+
+- changed to new major version 8 because of move of existing classes to new packages
+- moved all comparator classes from package comparators to new package comparator
 
 Version 3.9
 -------------

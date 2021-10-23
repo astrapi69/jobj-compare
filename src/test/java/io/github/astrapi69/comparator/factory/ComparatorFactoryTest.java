@@ -18,20 +18,18 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.comparators;
+package io.github.astrapi69.comparator.factory;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import org.testng.annotations.Test;
 
@@ -44,33 +42,6 @@ public class ComparatorFactoryTest
 {
 
 	/**
-	 * Factory method for create a map for and count elements of the given collection
-	 *
-	 * @param <K>
-	 *            the generic type of the elements
-	 * @param counterMap
-	 *            the counter Map
-	 * @param elements
-	 *            the elements
-	 * @return the new map ready to count elements
-	 */
-	private static <K> Map<K, Integer> newCounterMap(Map<K, Integer> counterMap,
-		Collection<K> elements)
-	{
-		Objects.requireNonNull(counterMap);
-		for (K element : elements)
-		{
-			if (counterMap.containsKey(element))
-			{
-				counterMap.merge(element, 1, Integer::sum);
-				continue;
-			}
-			counterMap.put(element, 0);
-		}
-		return counterMap;
-	}
-
-	/**
 	 * Test for method {@link ComparatorFactory#newComparator(List)}
 	 */
 	@Test
@@ -79,12 +50,38 @@ public class ComparatorFactoryTest
 		List<Integer> values;
 		List<Integer> actual;
 		List<Integer> expected;
+		Comparator<Integer> customComparator;
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
 		// change list to random sort order
 		Collections.shuffle(values);
 		// create the custom Comparator from the given list
-		Comparator<Integer> customComparator = ComparatorFactory.newComparator(values);
+		customComparator = ComparatorFactory.newComparator(values);
+		// create a new list to sort with the custom Comparator
+		actual = Lists.newArrayList(1, 2, 3, 4, 5);
+		// sort with the custom Comparator
+		actual.sort(customComparator);
+		// now the actual list have to be sorted as the values list
+		expected = values;
+		assertEquals(actual, expected);
+	}
+
+	/**
+	 * Test for method {@link ComparatorFactory#newDefinedOrderComparator(List)}
+	 */
+	@Test
+	public void testNewDefinedOrderComparator()
+	{
+		List<Integer> values;
+		List<Integer> actual;
+		List<Integer> expected;
+		Comparator<Integer> customComparator;
+		// new scenario...
+		values = Lists.newArrayList(1, 2, 3, 4, 5);
+		// change list to random sort order
+		Collections.shuffle(values);
+		// create the custom Comparator from the given list
+		customComparator = ComparatorFactory.newDefinedOrderComparator(values);
 		// create a new list to sort with the custom Comparator
 		actual = Lists.newArrayList(1, 2, 3, 4, 5);
 		// sort with the custom Comparator
@@ -102,11 +99,12 @@ public class ComparatorFactoryTest
 	{
 
 		List<Integer> values;
+		Map<Integer, Integer> numberCounterMap;
+		Comparator<Integer> integerComparator;
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
-		Map<Integer, Integer> numberCounterMap;
-		numberCounterMap = newCounterMap(new HashMap<>(), values);
-		Comparator<Integer> integerComparator = ComparatorFactory
+		numberCounterMap = TestDataFactory.newCounterMap(new HashMap<>(), values);
+		integerComparator = ComparatorFactory
 			.newMapValuesComparator(numberCounterMap);
 		assertNotNull(integerComparator);
 	}
@@ -122,7 +120,7 @@ public class ComparatorFactoryTest
 		// new scenario...
 		values = Lists.newArrayList(1, 2, 3, 4, 5);
 		Map<Integer, Integer> numberCounterMap;
-		numberCounterMap = newCounterMap(new HashMap<>(), values);
+		numberCounterMap = TestDataFactory.newCounterMap(new HashMap<>(), values);
 		Comparator<Integer> integerComparator = ComparatorFactory
 			.newRandomMapValuesComparator(numberCounterMap, SecureRandom.getInstanceStrong());
 		assertNotNull(integerComparator);

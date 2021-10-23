@@ -18,28 +18,33 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.comparators;
+package io.github.astrapi69.comparator;
 
-import static org.testng.Assert.assertEquals;
+import java.util.Comparator;
 
-import org.testng.annotations.Test;
-
-import io.github.astrapi69.test.objects.Person;
-
-public class BeanPropertyComparatorTest
+/**
+ * The enum {@link CompareOrder} that encapsulates the possible return values of the method
+ * {@link Comparator#compare(Object, Object)}
+ */
+public enum CompareOrder
 {
+	/** The order to sort an object after. */
+	AFTER(1),
+	/** The order to sort an object before. */
+	BEFORE(-1),
+	/** The order to sort an object as equal. */
+	EQUAL(0);
 
-	@Test
-	public void testCompare()
+	/** The order. */
+	private final int order;
+
+	CompareOrder(final int order)
 	{
-		int expected;
-		int actual;
+		this.order = order;
+	}
 
-		final Person person = Person.builder().name("al").build();
-		final Person otherPerson = Person.builder().name("bert").build();
-		BeanPropertyComparator<Person> beanComparator = new BeanPropertyComparator<>("name");
-		actual = beanComparator.compare(person, otherPerson);
-		expected = -1;
-		assertEquals(actual, expected);
+	public int getOrder()
+	{
+		return order;
 	}
 }

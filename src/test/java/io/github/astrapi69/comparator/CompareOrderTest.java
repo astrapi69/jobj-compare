@@ -18,19 +18,51 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.comparators;
+package io.github.astrapi69.comparator;
+
+import static org.testng.Assert.assertEquals;
+
+import java.lang.reflect.InvocationTargetException;
+
+import io.github.astrapi69.comparator.CompareOrder;
+import org.meanbean.test.BeanTestException;
+import org.meanbean.test.BeanTester;
+import org.testng.annotations.Test;
 
 /**
- * Sort order for {@link java.util.Comparator}.
+ * The unit test class for the enum class {@link CompareOrder}.
  */
-public enum SortOrder
+public class CompareOrderTest
 {
+
 	/**
-	 * The ascending sort order
+	 * Test method for {@link CompareOrder#getOrder()}
 	 */
-	ASCENDING,
+	@Test
+	public void testGetOrder()
+	{
+		int expected;
+		int actual;
+		actual = CompareOrder.AFTER.getOrder();
+		expected = 1;
+		assertEquals(actual, expected);
+		actual = CompareOrder.BEFORE.getOrder();
+		expected = -1;
+		assertEquals(actual, expected);
+		actual = CompareOrder.EQUAL.getOrder();
+		expected = 0;
+		assertEquals(actual, expected);
+	}
+
 	/**
-	 * The descending sort order
+	 * Test method for {@link CompareOrder}
 	 */
-	DESCENDING
+	@Test(expectedExceptions = { BeanTestException.class, InvocationTargetException.class,
+			UnsupportedOperationException.class })
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(CompareOrder.class);
+	}
+
 }

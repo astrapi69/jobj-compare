@@ -30,7 +30,7 @@ import java.util.Set;
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
 
-import io.github.astrapi69.comparators.ComparatorExtensions;
+import io.github.astrapi69.comparator.ComparatorExtensions;
 
 /**
  * The class {@link CompareObjectExtensions} provide methods for compare an object with another

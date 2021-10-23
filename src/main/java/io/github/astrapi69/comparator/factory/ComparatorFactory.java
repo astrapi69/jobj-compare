@@ -18,7 +18,7 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69.comparators;
+package io.github.astrapi69.comparator.factory;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -44,8 +44,26 @@ public class ComparatorFactory
 	 * @param definedOrder
 	 *            the defined order
 	 * @return the comparator
+	 * @deprecated use instead the new method newDefinedOrderComparator in this factory class
 	 */
 	public static <T> Comparator<T> newComparator(final List<T> definedOrder)
+	{
+		Objects.requireNonNull(definedOrder);
+		return newDefinedOrderComparator(definedOrder);
+	}
+
+	/**
+	 * Factory method for create a new {@link Comparator} from the given {@link List} with the
+	 * defined order of the returned {@link Comparator}
+	 *
+	 * @param <T>
+	 *            the generic type of the elements
+	 * @param definedOrder
+	 *            the defined order
+	 * @return the new {@link Comparator} from the given {@link List} with the defined order of the
+	 *         returned {@link Comparator}
+	 */
+	public static <T> Comparator<T> newDefinedOrderComparator(final List<T> definedOrder)
 	{
 		Objects.requireNonNull(definedOrder);
 		return Comparator.comparing(definedOrder::indexOf);
