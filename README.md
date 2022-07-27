@@ -2,9 +2,9 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://api.travis-ci.com/astrapi69/jobj-compare.svg?branch=master)](https://travis-ci.com/github/astrapi69/jobj-compare) 
-[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master) 
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-compare.svg?style=flat)](https://github.com/astrapi69/jobj-compare/issues) 
+[![Build Status](https://api.travis-ci.com/astrapi69/jobj-compare.svg?branch=master)](https://travis-ci.com/github/astrapi69/jobj-compare)
+[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master)
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-compare.svg?style=flat)](https://github.com/astrapi69/jobj-compare/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-compare.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-compare)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
@@ -33,23 +33,23 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- JOBJ-COMPARE version -->
-		<jobj-compare.version>3.9</jobj-compare.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- JOBJ-COMPARE DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>jobj-compare</artifactId>
-				<version>${jobj-compare.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- JOBJ-COMPARE version -->
+        <jobj-compare.version>3.9</jobj-compare.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- JOBJ-COMPARE DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>jobj-compare</artifactId>
+                <version>${jobj-compare.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 
 ## gradle dependency
@@ -67,9 +67,9 @@ or in build.gradle ext area
 
 ```
 ext {
-			...
+            ...
     jobjCompareVersion = "3.9"
-			...
+            ...
 }
 ```
 
@@ -77,9 +77,9 @@ and than add the dependency to the dependencies area
 
 ```
 dependencies {
-			...
+            ...
     implementation("io.github.astrapi69:jobj-compare:$jobjCompareVersion")
-			...
+            ...
 }
 ```
 
@@ -136,7 +136,7 @@ or over Monero(XMR) with:
 alt="Donation Monero Wallet" width="250"/>
 
 or over flattr:
-  
+
 <a href="http://flattr.com/thing/4067696/astrapi69jobj-compare-on-GitHub" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" style="border: none" />
 </a>

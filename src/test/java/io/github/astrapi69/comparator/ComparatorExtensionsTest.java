@@ -27,7 +27,7 @@ import static org.testng.AssertJUnit.assertTrue;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
-import io.github.astrapi69.test.objects.Person;
+import io.github.astrapi69.test.object.Person;
 
 /**
  * The unit test class for the class {@link ComparatorExtensions}.

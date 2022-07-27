@@ -7,11 +7,19 @@ Version 8-SNAPSHOT
 ADDED:
 
 - created new factory method for create a comparator with a defined order
+- new gradle plugin 'org.ajoberstar.grgit:grgit-gradle' in major version 5.0.0
+- new gradle plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' for formatting source code with gradle build task
 
 CHANGED:
 
+- update to jdk version 11
+- update gradle to new version 7.5
+- update of com.github.ben-manes.versions.gradle.plugin to new minor version 0.42.0
 - changed to new major version 8 because of move of existing classes to new packages
 - moved all comparator classes from package comparators to new package comparator
+- update of test dependency test-objects to new version 6.1
+- update of test dependency guava version to 31.1-jre
+- update of test dependency testng version to 7.6.1
 
 Version 3.9
 -------------
@@ -42,7 +50,7 @@ Version 3.7
 -------------
 
 ADDED:
- 
+
 - created new factory methods for create a comparator from the values of a map
 - created new factory methods for create a random comparator from the values of a map
 
@@ -58,15 +66,15 @@ Version 3.6
 -------------
 
 ADDED:
- 
-- created new BeanPropertyComparator class 
+
+- created new BeanPropertyComparator class
 
 
 Version 3.5
 -------------
 
 ADDED:
- 
+
 - added new methods that can compare over selected properties of the given objects
 
 CHANGED:
@@ -78,8 +86,8 @@ Version 3.4
 -------------
 
 ADDED:
- 
-- new test dependency commons-lang3  
+
+- new test dependency commons-lang3
 - new unit tests created
 - null check to compareTo method added
 - created new idea run configuration for code coverage
@@ -96,7 +104,7 @@ Version 3.3
 -------------
 
 ADDED:
- 
+
 - gradle as build system
 
 CHANGED:
@@ -104,13 +112,13 @@ CHANGED:
 - removed maven related files
 - changed project nature from maven to gradle nature
 - removed lombok dependency
-- removed all lombok dependent imports 
+- removed all lombok dependent imports
 
 Version 3.2
 -------------
 
 ADDED:
- 
+
 - new factory class created for create custom Comparators
 - added new test dependency guava in version 28.1-jre
 
@@ -124,19 +132,17 @@ Version 3.1
 -------------
 
 ADDED:
- 
+
 - new enum CompareOrder created that encapsulates the possible return values of the compare method
 
 Version 3
 -------------
 
 ADDED:
- 
+
 - this changelog file
 - created PULL_REQUEST_TEMPLATE.md file
 - created CODE_OF_CONDUCT.md file
 - created CONTRIBUTING.md file
 - provide package.html for the javadoc of packages
 - moved classes from obsolet jobject-compare project
-
-
