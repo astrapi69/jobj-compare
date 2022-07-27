@@ -42,31 +42,6 @@ public class ComparatorFactoryTest
 {
 
 	/**
-	 * Test for method {@link ComparatorFactory#newComparator(List)}
-	 */
-	@Test
-	public void testNewComparator()
-	{
-		List<Integer> values;
-		List<Integer> actual;
-		List<Integer> expected;
-		Comparator<Integer> customComparator;
-		// new scenario...
-		values = Lists.newArrayList(1, 2, 3, 4, 5);
-		// change list to random sort order
-		Collections.shuffle(values);
-		// create the custom Comparator from the given list
-		customComparator = ComparatorFactory.newComparator(values);
-		// create a new list to sort with the custom Comparator
-		actual = Lists.newArrayList(1, 2, 3, 4, 5);
-		// sort with the custom Comparator
-		actual.sort(customComparator);
-		// now the actual list have to be sorted as the values list
-		expected = values;
-		assertEquals(actual, expected);
-	}
-
-	/**
 	 * Test for method {@link ComparatorFactory#newDefinedOrderComparator(List)}
 	 */
 	@Test

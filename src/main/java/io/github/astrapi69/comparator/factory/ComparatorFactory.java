@@ -37,23 +37,6 @@ public class ComparatorFactory
 
 	/**
 	 * Factory method for create a new {@link Comparator} from the given {@link List} with the
-	 * defined order
-	 *
-	 * @param <T>
-	 *            the generic type of the elements
-	 * @param definedOrder
-	 *            the defined order
-	 * @return the comparator
-	 * @deprecated use instead the new method newDefinedOrderComparator in this factory class
-	 */
-	public static <T> Comparator<T> newComparator(final List<T> definedOrder)
-	{
-		Objects.requireNonNull(definedOrder);
-		return newDefinedOrderComparator(definedOrder);
-	}
-
-	/**
-	 * Factory method for create a new {@link Comparator} from the given {@link List} with the
 	 * defined order of the returned {@link Comparator}
 	 *
 	 * @param <T>
@@ -123,7 +106,7 @@ public class ComparatorFactory
 	{
 		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
 		Collections.shuffle(numberCounterValues, secureRandom);
-		return ComparatorFactory.newComparator(numberCounterValues);
+		return ComparatorFactory.newDefinedOrderComparator(numberCounterValues);
 	}
 
 	/**
@@ -140,7 +123,7 @@ public class ComparatorFactory
 	public static <K, V> Comparator<V> newMapValuesComparator(Map<K, V> map)
 	{
 		List<V> numberCounterValues = new ArrayList<>(new TreeSet<>(map.values()));
-		return ComparatorFactory.newComparator(numberCounterValues);
+		return ComparatorFactory.newDefinedOrderComparator(numberCounterValues);
 	}
 
 }
