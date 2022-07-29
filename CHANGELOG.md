@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 8-SNAPSHOT
+Version 11
 -------------
 
 ADDED:
@@ -16,7 +16,7 @@ CHANGED:
 - update gradle to new version 7.5
 - update of com.github.ben-manes.versions.gradle.plugin to new minor version 0.42.0
 - changed to new major version 8 because of move of existing classes to new packages
-- moved all comparator classes from package comparators to new package comparator
+- moved all comparator classes from package comparator.* to new module comparator-extensions
 - update of test dependency test-objects to new version 6.1
 - update of test dependency guava version to 31.1-jre
 - update of test dependency testng version to 7.6.1
