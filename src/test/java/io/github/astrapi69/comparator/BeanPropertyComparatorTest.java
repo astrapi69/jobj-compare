@@ -20,9 +20,9 @@
  */
 package io.github.astrapi69.comparator;
 
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 import io.github.astrapi69.test.object.Person;
 

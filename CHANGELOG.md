@@ -7,6 +7,7 @@ Version 11.1-SNAPSHOT
 CHANGED:
 
 - update of dependency comparator-extensions to new minor version 1.1
+- replaced test dependency testng with junit.jupiter.api
 
 Version 11
 -------------
