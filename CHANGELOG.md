@@ -9,6 +9,10 @@ CHANGED:
 - update of dependency comparator-extensions to new minor version 1.1
 - replaced test dependency testng with junit.jupiter.api
 
+CHANGED:
+
+- update of dependency comparator-extensions to new version 1.2
+
 Version 11
 -------------
 
