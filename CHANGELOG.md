@@ -12,6 +12,7 @@ CHANGED:
 - update gradle to new version 7.5.1
 - update of dependency comparator-extensions to new minor version 1.2
 - replaced test dependency testng with junit.jupiter.api
+- update of test dependency test-object to new version 7
 
 Version 11
 -------------
