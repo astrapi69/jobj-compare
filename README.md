@@ -5,8 +5,8 @@
 [![Build Status](https://api.travis-ci.com/astrapi69/jobj-compare.svg?branch=master)](https://travis-ci.com/github/astrapi69/jobj-compare)
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jobj-compare/badge.svg?branch=master)](https://coveralls.io/github/astrapi69/jobj-compare?branch=master)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-compare.svg?style=flat)](https://github.com/astrapi69/jobj-compare/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jobj-compare)
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-compare.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-compare)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/jobj-compare/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/jobj-compare)
+[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/jobj-compare.svg)](http://www.javadoc.io/doc/io.github.astrapi69/jobj-compare)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 </div>
@@ -27,7 +27,7 @@ Utility library for simply compare java objects.
 ## Maven dependency
 
 Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-compare~~~) for latest snapshots and releases.
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~jobj-compare~~~) for latest snapshots and releases.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-compare:
 
@@ -178,12 +178,12 @@ Do not hesitate to contact the jobj-compare developers with your questions, conc
 
 |**Nexus Sonatype repositories**|
 |     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/de.alpharogroup/jobj-compare.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~de.alpharogroup~jobj-compare~~~)|
+|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/jobj-compare.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~jobj-compare~~~)|
 |Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
 |     <img width=1000/>     |
 
 |**javadoc.io**|
 |     :---:      |
-|[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jobj-compare.svg)](http://www.javadoc.io/doc/de.alpharogroup/jobj-compare)|
+|[![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/jobj-compare.svg)](http://www.javadoc.io/doc/io.github.astrapi69/jobj-compare)|
 |Special thanks to [javadoc.io](http://www.javadoc.io) for providing a free javadoc documentation for open source projects|
 |     <img width=1000/>     |
