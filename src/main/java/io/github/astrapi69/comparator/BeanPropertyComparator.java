@@ -43,14 +43,6 @@ public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 	private String property;
 
 	/**
-	 * Instantiates a new {@link BeanPropertyComparator}
-	 */
-	public BeanPropertyComparator()
-	{
-		this(null);
-	}
-
-	/**
 	 * Instantiates a new {@link BeanPropertyComparator} from the given property
 	 *
 	 * @param property
