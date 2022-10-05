@@ -32,7 +32,12 @@ import org.apache.commons.beanutils.PropertyUtils;
  *
  * @param <T>
  *            the generic type
+ * @deprecated use instead <code>Comparator#comparing</code> or the new method
+ *             <code>ComparatorFactory#newBeanPropertyComparator</code> Note:<br/>
+ *             <br/>
+ *             will be removed in the next minor release
  */
+@Deprecated
 public class BeanPropertyComparator<T> implements Comparator<T>, Serializable
 {
 
