@@ -1,7 +1,6 @@
 
 dependencies {
     implementation("io.github.astrapi69:comparator-extensions:$comparatorExtensionsVersion")
-    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
     testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
     testImplementation("com.google.guava:guava:$guavaVersion")
     testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
