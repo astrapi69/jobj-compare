@@ -8,9 +8,9 @@ CHANGED:
 
 - tagged class BeanPropertyComparator as deprecated
 - update of gradle-plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new minor version 6.11.0
-- update of dependency comparator-extensions to new minor version 1.3
+- update of dependency comparator-extensions to new minor version 1.4
 - update of test dependency junit.jupiter.api to new patch version 5.9.1
-- update of test dependency test-object to new version 7.1
+- update of test dependency test-object to new version 7.2
 
 Version 11.1
 -------------
