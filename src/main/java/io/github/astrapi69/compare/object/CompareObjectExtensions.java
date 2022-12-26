@@ -34,7 +34,13 @@ import io.github.astrapi69.comparator.ComparatorExtensions;
 /**
  * The class {@link CompareObjectExtensions} provide methods for compare an object with another
  * given object.
+ *
+ * @deprecated use instead the class <code>ComparatorExtensions</code> from the new module
+ *             'comparator-extensions' Note:<br/>
+ *             <br/>
+ *             will be removed in the next minor release
  */
+@Deprecated
 public final class CompareObjectExtensions
 {
 
