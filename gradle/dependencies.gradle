@@ -1,11 +1,13 @@
-
 dependencies {
-    implementation("io.github.astrapi69:comparator-extensions:$comparatorExtensionsVersion")
-    implementation("commons-beanutils:commons-beanutils:$commonsBeanutilsVersion")
-    testImplementation("org.apache.commons:commons-lang3:$commonsLang3Version")
-    testImplementation("com.google.guava:guava:$guavaVersion")
-    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
-    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+
+    implementation libs.comparator.extensions
+    implementation libs.commons.beanutils
+
+    testImplementation libs.commons.lang3
+    testImplementation libs.guava
+    testImplementation libs.test.object
+    testImplementation libs.meanbean
+    // Note: use of bundles...
+    testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.junit.platform.launcher
 }

@@ -4,6 +4,10 @@
 Version 11.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+
 CHANGED:
 
 - tagged class BeanPropertyComparator as deprecated
