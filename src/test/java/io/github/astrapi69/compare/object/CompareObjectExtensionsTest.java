@@ -694,4 +694,3 @@ public class CompareObjectExtensionsTest
 	}
 
 }
-

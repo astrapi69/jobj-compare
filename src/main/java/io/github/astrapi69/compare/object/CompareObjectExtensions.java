@@ -29,6 +29,7 @@ import java.util.Set;
 
 import org.apache.commons.beanutils.BeanComparator;
 import org.apache.commons.beanutils.BeanUtils;
+
 import io.github.astrapi69.comparator.ComparatorExtensions;
 
 /**
