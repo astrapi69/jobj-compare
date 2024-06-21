@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 11.2-SNAPSHOT
+Version 12-SNAPSHOT
 -------------
 
 ADDED:
@@ -10,11 +10,18 @@ ADDED:
 
 CHANGED:
 
+- update to jdk version 17
+- update gradle to new version 8.8
+- update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
+- update of gradle-plugin dependency 'org.ajoberstar.grgit:grgit-gradle' to new version 5.2.2
+- update of gradle plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new version 7.0.0.BETA1
 - tagged class BeanPropertyComparator as deprecated
-- update of gradle-plugin dependency 'com.diffplug.spotless:spotless-plugin-gradle' to new minor version 6.11.0
-- update of dependency comparator-extensions to new minor version 1.4
-- update of test dependency junit.jupiter.api to new patch version 5.9.1
-- update of test dependency test-object to new version 7.2
+- update of test dependency commons-lang3 version to 3.14.0
+- update of dependency comparator-extensions to new minor version 1.5
+- update of test dependency test-objects to new version 8.2
+- update of test dependency guava version to 33.2.1-jre
+- update of test dependency junit.jupiter.api to new patch version 5.11.0-M2
+- update of test dependency junit-platform-launcher to new version 1.11.0-M2
 
 Version 11.1
 -------------

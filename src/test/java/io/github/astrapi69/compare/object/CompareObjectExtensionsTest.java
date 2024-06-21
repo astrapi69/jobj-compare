@@ -44,7 +44,7 @@ import com.google.common.collect.Sets;
 
 import io.github.astrapi69.test.object.Permission;
 import io.github.astrapi69.test.object.Person;
-import io.github.astrapi69.test.object.enumtype.Gender;
+import io.github.astrapi69.test.object.enumeration.Gender;
 
 /**
  * The unit test class for the class {@link CompareObjectExtensions}.
