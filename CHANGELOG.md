@@ -22,6 +22,7 @@ CHANGED:
 - update of test dependency guava version to 33.2.1-jre
 - update of test dependency junit.jupiter.api to new patch version 5.11.0-M2
 - update of test dependency junit-platform-launcher to new version 1.11.0-M2
+- replaced obsolete package.html with package-info.java files
 
 Version 11.1
 -------------
