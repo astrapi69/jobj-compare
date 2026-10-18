@@ -10,6 +10,8 @@ ADDED:
 
 CHANGED:
 
+- update of dependency commons-beanutils to new version 1.11.0 (#2): 1.9.4 reached every consumer of
+  file-worker and mystic-crypt
 - update to jdk version 17
 - update gradle to new version 8.8
 - update of gradle plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.51.0
