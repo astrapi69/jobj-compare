@@ -10,6 +10,13 @@ ADDED:
 
 CHANGED:
 
+- releases go to Maven Central through the Central Portal, as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs the new `publish.yml`. The OSSRH staging endpoint this project published to
+  is shut down; its settings are gone, among them the switch that held the checksums to md5 and
+  sha1, and snapshots resolve from the Central Portal's snapshot repository. Signing follows the
+  key: in CI from `GPG_PRIVATE_KEY`, with `GPG_KEY_ID` naming the signing subkey, so a manual
+  snapshot run rehearses the release signature, and a release without a key is refused (#4)
 - update of dependency commons-beanutils to new version 1.11.0 (#2): 1.9.4 reached every consumer of
   file-worker and mystic-crypt
 - update to jdk version 17
