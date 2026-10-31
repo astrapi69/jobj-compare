@@ -1,6 +1,6 @@
 [versions]
 commons-beanutils-version = "1.11.0"
-commons-lang3-version = "3.14.0"
+commons-lang3-version = "3.18.0"
 comparator-extensions-version = "1.5"
 gradle-plugin-grgit-version = "5.2.2"
 gradle-plugin-license-version = "0.16.1"
