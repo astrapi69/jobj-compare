@@ -5,7 +5,7 @@
 [![Java CI with Gradle](https://github.com/astrapi69/jobj-compare/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/jobj-compare/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/jobj-compare/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/jobj-compare)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/jobj-compare.svg?style=flat)](https://github.com/astrapi69/jobj-compare/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/jobj-compare/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/jobj-compare)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/jobj-compare)](https://central.sonatype.com/artifact/io.github.astrapi69/jobj-compare)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/jobj-compare.svg)](http://www.javadoc.io/doc/io.github.astrapi69/jobj-compare)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
@@ -26,8 +26,7 @@ Utility library for simply compare java objects.
 
 ## Maven dependency
 
-Maven dependency is now on sonatype.
-Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~jobj-compare~~~) for latest snapshots and releases.
+The library is on Maven Central. Check out [Maven Central](https://central.sonatype.com/artifact/io.github.astrapi69/jobj-compare) for the latest release.
 
 Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jobj-compare:
 
@@ -126,9 +125,9 @@ Do not hesitate to contact the jobj-compare developers with your questions, conc
 
 ## Credits
 
-|**Nexus Sonatype repositories**|
+|**Maven Central**|
 |     :---:      |
-|[![sonatype repository](https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.astrapi69/jobj-compare.svg?style=for-the-badge)](https://oss.sonatype.org/index.html#nexus-search;gav~io.github.astrapi69~jobj-compare~~~)|
+|[![Maven Central](https://img.shields.io/maven-central/v/io.github.astrapi69/jobj-compare?style=for-the-badge)](https://central.sonatype.com/artifact/io.github.astrapi69/jobj-compare)|
 |Special thanks to [sonatype repository](https://www.sonatype.com) for providing a free maven repository service for open source projects|
 |     <img width=1000/>     |
 
