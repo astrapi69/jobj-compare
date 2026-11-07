@@ -1,6 +1,32 @@
+/**
+ * Hands ModulePathTest the built jar and its runtime class path, comparator-extensions among them, which it
+ * compiles a consumer against, a module on the module path and a class on the class path (#26), as
+ * comparator-extensions does it for its ModulePathTest. It is an input of the test task, so the test task runs
+ * after jar and reruns when it changes; it is read when the test JVM starts, so the configuration cache keeps
+ * working.
+ */
+abstract class ModulePathTestArguments implements CommandLineArgumentProvider {
+
+    @Classpath
+    abstract ConfigurableFileCollection getJar()
+
+    @Classpath
+    abstract ConfigurableFileCollection getRuntimeClasspath()
+
+    @Override
+    Iterable<String> asArguments() {
+        ["-Dmodule.path.test.jar=${jar.singleFile.absolutePath}".toString(),
+         "-Dmodule.path.test.runtime.classpath=${runtimeClasspath.asPath}".toString()]
+    }
+}
+
+def modulePathTestArguments = objects.newInstance(ModulePathTestArguments)
+modulePathTestArguments.jar.from(tasks.named('jar'))
+modulePathTestArguments.runtimeClasspath.from(configurations.named('runtimeClasspath'))
 
 test {
     useJUnitPlatform()
+    jvmArgumentProviders.add(modulePathTestArguments)
 }
 
 jacocoTestReport {
