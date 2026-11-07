@@ -107,8 +107,8 @@ public class ModulePathTest
 
 	/**
 	 * Test that a consumer module that requires this library and comparator-extensions compiles on
-	 * the module path. Today it does not: both modules hold the package
-	 * {@code io.github.astrapi69.comparator}
+	 * the module path: no package of this library is one of comparator-extensions, so javac reports
+	 * no package clash
 	 *
 	 * @param directory
 	 *            the directory for the sources and the classes of the consumer
@@ -121,10 +121,8 @@ public class ModulePathTest
 		final Compilation compilation = compile(directory, "--module-path",
 			Map.of("module-info.java", CONSUMER_MODULE_INFO, "consumer/check/Compare.java",
 				CONSUMER_CLASS));
-		assertFalse(compilation.compiled(), compilation.messages());
-		assertTrue(compilation.messages().contains("compiler.err.package.clash.from.requires: "),
-			compilation.messages());
-		assertTrue(compilation.messages().contains("io.github.astrapi69.comparator"),
+		assertTrue(compilation.compiled(), compilation.messages());
+		assertFalse(compilation.messages().contains("compiler.err.package.clash.from.requires"),
 			compilation.messages());
 	}
 
